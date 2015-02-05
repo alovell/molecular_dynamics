@@ -2,12 +2,13 @@
 
       contains
 
-      subroutine calc_forces(N,pos,forces)
+      subroutine calc_forces(N,pos,forces,VLJ)
 
       !implicit none
       integer, intent(in)  :: N
       real(8), intent(in)  :: pos(N,3)
       real(8), intent(inout)  :: forces(N,3)
+	  real(8), intent(inout   :: VLJ(N,1)
       real(8) :: dx(N),dy(N),dz(N),rc,sig,ep,dr(N,N),mass
       integer :: i,j
       real(8)  :: dt !time step
@@ -42,7 +43,7 @@
       
       !calculate the force on each particle
       do j= 1,N
-        do i=1,N
+        do i=j+1,N
 	  !if distance is greater than critical distance
 	  !or the particles are the same force is zero
 	  if (dr(i,j)==0) then 
@@ -63,10 +64,19 @@
       
       !print forces to see if there are zeros where we expect
       do j=1,N
-        do i=1,N
+        do i=j+1,N
           print *, forces(i,j)
-	enddo 
+	    enddo 
       enddo
+	  
+	  !calculate the potential energy of each particle
+	  !this should go into the same loop as the force calculation 
+	  !-right after the force calculation
+	  VLJ(j,:)=VLJ(j,:) + 4*ep*(sig**12/dr2**12 - sig**6/dr2**6)
+	  VLJ(i,:)=VLJ(i,:) + 4*ep*(sig**12/dr2**12 - sig**6/dr2**6)
+	  
+	  !then in python, 
+	  !engy=VLJ+mom**2/2. - for each particle
       
       !this section is commented out - need to read in mom vector
       !also need to read out new pos and mom vectors
