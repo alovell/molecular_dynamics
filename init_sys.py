@@ -11,7 +11,7 @@ def init_mom(N, temp):
 
 def init_pos(N,density):
   npdim = int(round((N/4)**(1./3.)))
-  print npdim, 'npdim'
+#  print npdim, 'npdim'
   l = (N/density)**(1.0/3)
   a = 0.5*l/npdim
   print npdim, l, a
@@ -26,7 +26,7 @@ def init_pos(N,density):
         pos[cnt+3,:] = [0+2*a*i,a+2*a*j,a+2*a*k]
         cnt = cnt + 4
 
-  return pos, l
+  return pos, l, npdim
 
 def init_forc(N):
   forces = np.zeros((N,3), dtype = float)
@@ -35,3 +35,11 @@ def init_forc(N):
 def init_pot(N):
   pot = np.zeros((N,1), dtype = float)
   return pot
+
+def init_dist(N):
+  distances = np.zeros((N,N), dtype = float)
+  return distances
+
+def init_bins(nbins):
+  bin_vec = np.zeros((nbins), dtype = float)
+  return bin_vec
