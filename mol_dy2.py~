@@ -22,7 +22,7 @@ N=108
 lpnum = 1000
 density = 0.85
 temp = 0.8
-Ttarg = 0.1
+Ttarg = 1
 Kb =  1
 nbins = 100 #number of radial shells
 
@@ -44,6 +44,7 @@ for lp in range(lpnum):
   forces, pot, distances = fm.calc_forces(pos,forces,pot,l,distances,[N])
   mom = mom + forces*0.5*dt
   Ken = np.sum(mom*mom*0.5, axis=1)
+  print Ken
   toten = sum(Ken) + sum(pot)
   if lp % 100 == 0:
     lamda = np.sqrt((Ttarg*3.*(N-1.)*Kb)/(np.sum(Ken)*2.))

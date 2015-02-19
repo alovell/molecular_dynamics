@@ -1,17 +1,18 @@
  
-      subroutine calc_forces(N,pos,forces,pot,l,distances)
+      subroutine calc_forces(N,pos,forces,pot,l,distances,presvirial)
 
       !implicit none
       integer, intent(in)  :: N
       real(8), intent(in)  :: pos(N,3),l
       real(8), intent(inout)  :: forces(N,3),pot(N), distances(N,N)
-!f2py intent (in,out) :: forces, pot, distances
+      real(8), intent(out) :: presvirial(1)
+!f2py intent (in,out) :: forces, pot, distances, presvirial
       real(8), parameter :: rc =3.2
       real(8) :: dr_vec(3),partialforce(3),dr2,F,partialpot
       integer :: i,j
       
           
-
+      presvirial = 0.0
       forces(:,:) = 0.0 
       pot(:) = 0.0
       distances(:,:) = 0.0
@@ -31,6 +32,7 @@
             partialforce(:) = 24*dr_vec*f
             forces(j,:) = forces(j,:) - partialforce(:)
             forces(i,:) = forces(i,:) + partialforce(:)
+            presvirial = presvirial + dot_product(dr_vec,partialforce)
             partialpot = 4*(dr2**6 - dr2**3)
             pot(i) = pot(i) + partialpot
             pot(j) = pot(j) + partialpot

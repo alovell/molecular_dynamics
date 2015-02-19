@@ -2,9 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pylab
 
-def cor(npdim,N,distances,nbins,bin_vec):
+def cor(npdim,N,distances,nbins,finalbins,plotflag):
 #find the correlation function of the system
   dmax = np.sqrt(5.)*npdim
+  bin_vec = np.zeros(nbins, dtype = float)
 
   for i in range(N):
     for j in range(N):
@@ -18,14 +19,22 @@ def cor(npdim,N,distances,nbins,bin_vec):
   dR = dmax/nbins
   Rin = np.zeros((nbins), dtype=float)
   for bin_num in range(nbins):
-    Rout = (bin_num + 1)*dR
-    Rin[bin_num] = (bin_num)*dR
+    Rout = (bin_num + 2)*dR
+    Rin[bin_num] = (bin_num + 1)*dR
+    #Rin[0] = dR
     volume = 4.*np.pi*(Rout**3 - Rin[bin_num]**3)/3.
-    bin_vec[bin_num] = bin_vec[bin_num]/(4*np.pi*Rin[bin_num]**2*dR)#volume#((4./3.)*np.pi*dR**3)
-    print Rout,'Rout',Rin[bin_num],'Rin'
-  print bin_vec
+    bin_vec[bin_num] = bin_vec[bin_num]/(4*np.pi*Rin[bin_num]**2*dR)
+    #print bin_vec
+ 
+  
+  
 
-#print histogram
-  plt.bar(Rin,bin_vec,width=dR)
-  plt.show()
+  if plotflag == 1:
+    fig2 = plt.bar(Rin,finalbins,width=dR)
+    plt.show()
+
+
+  
   return bin_vec
+  
+
