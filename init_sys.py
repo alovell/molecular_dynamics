@@ -52,3 +52,7 @@ def init_toten(lpnum):
 def init_presvirialtime(lpnum):
   presvirial = np.zeros((lpnum,1), dtype = float)
   return presvirial
+  
+def init_kenarray(lpnum):
+  kenarray = np.zeros((lpnum,1), dtype = float)
+  return kenarray

@@ -8,12 +8,14 @@ def cor(npdim,N,distances,nbins,finalbins,plotflag):
   bin_vec = np.zeros(nbins, dtype = float)
 
   for i in range(N):
-    for j in range(N):
+    for j in range(i+1,N):
       bin_num = int(distances[i][j]*nbins/dmax)
-      bin_vec[bin_num] = bin_vec[bin_num] + 1
+      if bin_num < nbins/2.:
+        bin_vec[bin_num] = bin_vec[bin_num] + 1
+      
+      
 
-#normalize based on number of particles
-  bin_vec = bin_vec/N
+
 #normalize based on the volume of the radial shell
 #keeping order R^2*dR -> V=4*PI*R^2*dR
   dR = dmax/nbins
@@ -22,7 +24,7 @@ def cor(npdim,N,distances,nbins,finalbins,plotflag):
     Rout = (bin_num + 2)*dR
     Rin[bin_num] = (bin_num + 1)*dR
     #Rin[0] = dR
-    volume = 4.*np.pi*(Rout**3 - Rin[bin_num]**3)/3.
+    #volume = 4.*np.pi*(Rout**3 - Rin[bin_num]**3)/3.
     bin_vec[bin_num] = bin_vec[bin_num]/(4*np.pi*Rin[bin_num]**2*dR)
     #print bin_vec
  
