@@ -32,10 +32,6 @@ def init_forc(N):
   forces = np.zeros((N,3), dtype = float)
   return forces
 
-def init_pot(N):
-  pot = np.zeros((N,1), dtype = float)
-  return pot
-
 def init_dist(N):
   distances = np.zeros((N,N), dtype = float)
   return distances
@@ -52,3 +48,7 @@ def init_toten(lpnum):
 def init_presvirialtime(lpnum):
   presvirial = np.zeros((lpnum,1), dtype = float)
   return presvirial
+  
+def init_kenarray(lpnum):
+  kenarray = np.zeros((lpnum,1), dtype = float)
+  return kenarray

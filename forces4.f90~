@@ -5,7 +5,7 @@
       integer, intent(in)  :: N
       real(8), intent(in)  :: pos(N,3),l
       real(8), intent(inout)  :: forces(N,3),pot(N), distances(N,N)
-      real(8), intent(out) :: presvirial(1)
+      real(8), intent(inout) :: presvirial(1)
 !f2py intent (in,out) :: forces, pot, distances, presvirial
       real(8), parameter :: rc =3.2
       real(8) :: dr_vec(3),partialforce(3),dr2,F,partialpot

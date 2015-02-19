@@ -4,7 +4,7 @@
       !implicit none
       integer, intent(in)  :: N
       real(8), intent(in)  :: pos(N,3),l
-      real(8), intent(inout)  :: forces(N,3),pot(N), distances(N,N)
+      real(8), intent(inout)  :: forces(N,3),pot, distances(N,N)
       real(8), intent(inout) :: presvirial(1)
 !f2py intent (in,out) :: forces, pot, distances, presvirial
       real(8), parameter :: rc =3.2
@@ -14,7 +14,7 @@
           
       presvirial = 0.0
       forces(:,:) = 0.0 
-      pot(:) = 0.0
+      pot = 0.0
       distances(:,:) = 0.0
       
       !calculating the radial distance between each pair of particles
@@ -34,8 +34,7 @@
             forces(i,:) = forces(i,:) + partialforce(:)
             presvirial = presvirial + dot_product(dr_vec,partialforce)
             partialpot = 4*(dr2**6 - dr2**3)
-            pot(i) = pot(i) + partialpot
-            pot(j) = pot(j) + partialpot
+            pot = pot + partialpot
           end if
         enddo
       enddo
