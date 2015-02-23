@@ -1,0 +1,10 @@
+Problem description:
+
+The pressure fluctuates to much.
+
+Background: The pressure fluctuates. It varies with time, but not periodically. Total energy is conserved.
+Analysis of the programme has shown that the virial term is an order 3 greater than the ideal gas law term. This is due to the fact that when particles get really close to one another, the force becomes very high. As the virial term scales with the product of the force and the distance between two particles, high values for the force between two particles could be balanced by shorter distance between them. However this is not the case because according to the lennard jones potential the force grows exponentially with a decrease in distance. 
+Extra information:
+A typical graph of the contribution of each particle term is shown in the following graph. To get the total part beween brackets, one should sum over all bars. It now becomes clear that a couple of 'outliers', that is particles that have distance shorter than '1' wrs to eachother, have strong influence on the virial term. 
+Problem:
+Physically, I cannot see what goes wrong, the graph seems to behave according to the LJ potential, only the contribution of the short distance particles influences the virial term to much. How can I fix this problem without disrespecting the physics? 
