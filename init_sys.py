@@ -14,7 +14,7 @@ def init_pos(N,density):
 #  print npdim, 'npdim'
   l = (N/density)**(1.0/3)
   a = 0.5*l/npdim
-  print npdim, l, a
+#  print npdim, l, a
   pos = np.zeros((N,3), dtype = float)
   cnt = 0
   for k in range(npdim):
@@ -32,14 +32,23 @@ def init_forc(N):
   forces = np.zeros((N,3), dtype = float)
   return forces
 
-def init_pot(N):
-  pot = np.zeros((N,1), dtype = float)
-  return pot
-
 def init_dist(N):
   distances = np.zeros((N,N), dtype = float)
   return distances
 
-def init_bins(nbins):
-  bin_vec = np.zeros((nbins), dtype = float)
-  return bin_vec
+def init_bins(nbins,lpnum):
+  bin_vec_tot = np.zeros(nbins, dtype = float)
+  finalbins = np.zeros(nbins, dtype = float)
+  return bin_vec_tot,finalbins
+  
+def init_toten(lpnum):
+  toten = np.zeros((lpnum,1), dtype = float)
+  return toten
+  
+def init_presvirialtime(lpnum):
+  presvirial = np.zeros((lpnum,1), dtype = float)
+  return presvirial
+  
+def init_kenarray(lpnum):
+  kenarray = np.zeros((lpnum,1), dtype = float)
+  return kenarray
