@@ -1,0 +1,196 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{multicol}
+
+\begin{document}
+
+\title{Molecular Dynamics Simulation of Argon}
+\author{P. Hansler, D. Kuitenbrouwer, and A. Lovell}
+\maketitle
+
+\begin{center}
+\textbf{Abstract}  Write the abstract here - what the project is and what we are going to show.  \\
+\end{center}
+
+\begin{multicols}{2}
+
+\section{Introduction}
+
+\textbf{Somewhere put something about the initial conditions - the whole crystal things, and pictures and whatnot for the unit cell, etc.} \\
+
+\textbf{Need some actual introduction about why molecular dynamics calculations are interesting or something of the sort to get the paper/report going.  Can't just jump into everything.  Some background or something.} \\
+
+This report is broken into the following sections.  In Section \ref{theory}, we will briefly discuss the theory behind the calculations in this report.  Section \ref{disc} presents the results of our calculations, including a thermostat, correlation functions for the three states of matter, and pressure calculations.  We will then give a brief conclusion in section \ref{conc}.  An appendix is found at the end of this report to discuss the method used for error analysis.  
+
+\section{Theory}
+\label{theory}
+
+\subsection{Crystalline Array}
+
+\subsection{Interaction}
+
+To describe the interaction between each of the argon atoms, we use the Lennard-Jones potential, which accounts for the short-range repulsive force between the two atoms due to Coulomb repulsion and the longer-range attractive forces from dipole-dipole and dipole-induced dipole forces.  The form of the potential is as follows:
+
+\begin{equation}
+V_{LJ}(r) = 4 \epsilon \left [ \left (\frac{\sigma}{r} \right )^{12} - \left (\frac{\sigma}{r} \right )^{6} \right ]
+\end{equation}
+
+\noindent where $r$ is the distance between the two atoms, $\epsilon$ gives the depth of the potential well, and $\sigma = 2R $ where $R$ is the internuclear distance between the two atoms - $\sigma$ measures the distance at which the potential between the two particles is zero.  \\
+
+\textbf{put in a figure of the LJ potential and label everything - $\sigma$ and $\epsilon$} \\
+
+When the two atoms are far enough apart, they can be viewed as non-interacting.  For this reason, we can introduced a cut-off radius, $r_c$, beyond which the potential is taken to be zero.  Thus, we use the interaction \textbf{Look up how you've done this before} \\
+
+%\begin{equation}
+%V_{LJ} = \left \{ \begin{array}{lr} 4 \epsilon \left [ \left (\frac{\sigma}{r} \right )^{12} - \left (\frac{\sigma}{r} \right )^{6} \right ] & r \le r_c \\
+%0 & r > r_c 
+%\end{array}
+%\right 
+%\end{equation}
+
+From this, we immediately know the form of the force between the two atoms as well.  The force is radial, acting to bring the atoms closer together if $r > r_{\mathrm{min}}$ and repelling them if $r < r_{\mathrm{min}}$.  For our purposes, it it convenient to write the forces in terms of their Cartesian coordinates.  
+
+\begin{equation}
+\begin{split}
+F_x = 24\epsilon x \\
+F_y = 24 \epsilon y\\
+F_z = 24 \epsilon z \\
+\end{split}
+\end{equation}
+
+\noindent From the force between each pair of particles, the momenta and positions can be calculated, leading to the dynamics of the system.  This also allows calculation of thermodynamical quantities, such as pressure and correlation functions.\\
+
+For these calculations, we will take $\epsilon =1$ and $\sigma =1$.  \textbf{This is a terrible sentence:  To extract dimensionally correct quantities, we can just account for this at the end of the calculations. } 
+
+\subsection{Velocity Verlet Method}
+
+\textbf{The paper is in Phys. Rev. 159, 98 (1967).  Also I have it written down in my comp phys notebook, so take the equations out of there - and make sure they match up with what is in the code.} This paper is the Verlet method and not the velocity Verlet method, which seem to be different.  Very similar to the \textbf{leapfrog algorithm}.  \\
+
+The method chosen for the position and momentum calculations is the Verlet method.  While both can be calculated from introductory physics equations,
+
+\begin{equation}
+\label{momeqn}
+p_{i+1}=p_i + F \Delta t
+\end{equation}
+
+\noindent and
+
+\begin{equation}
+\label{poseqn}
+x_{i+1} = x_i + \frac{p_i}{m} + \frac{1}{2}\frac{F(\Delta t)^2}{m}
+\end{equation}
+
+\noindent this can lead to numerical inaccuracies in the position calculation because of the dependence on the square of the time step and both the previous force and momentum.  \textbf{Now talk about the Verlet Method and how it works, which was actually used in the original paper during a molecular dynamics simulation of argon.}\\
+
+The method still uses (\ref{momeqn}) for the updated momentum calculation, but instead of (\ref{poseqn}) for updating the position, one has
+
+\begin{equation}
+\mathrm{position}
+\end{equation}
+
+\textbf{Maybe put in the derivation, and again why this is beneficial.}\\
+
+Along with taking $\epsilon =1$ and $\sigma =1$ in the Lennard-Jones potential, we will also take $m=1$, with the same motivation.  At the end of the calculations, we can always put the proper values back in to extract dimensionally correct quantities.  
+
+\subsection{Thermodynamics}
+
+Along with updating the postion an momentum of each particle to see how the system equilibriates, there are also several thermodynamical quantities that we can calculate in order to learn more about the system we have created.  Before calculating any quantities, we want to model our system as being in contact with a thermostat to keep it at a constant temperature.  We do this by renormalizing the velocity.  \\
+
+Through the Virial Theorem, the average velocity and temperature of a system are related by
+
+\begin{equation}
+\label{vir}
+\frac{1}{2}m \langle v^2 \rangle = \frac{3}{2} k_B T^3
+\end{equation}
+
+\noindent where $m$ is the mass of the system, $\langle v^2 \rangle$ is the time average of the square of the velocity, $k_B$ is Boltzmann's constant (equal to one in a system where we take temperature and energy to have the same unit), and $T$ is the temperature of the system.  Therefore, to enforce a target temperature, $T_o$ in our system, the system must have a certain average velocity, $\langle v^2 \rangle _o$ given by
+
+\begin{equation}
+\label{virknot}
+\frac{1}{2}m \langle v^2 \rangle _o = \frac{3}{2} k_B T_o^3
+\end{equation}
+
+Dividing (\ref{vir}) by (\ref{virknot}) and taking the square root of each side, we have
+
+\begin{equation}
+\sqrt{\frac{\langle v^2 \rangle}{\langle v^2 \rangle _o}} = \left ( \frac{T}{T_o} \right ) ^{3/2}
+\end{equation}
+
+\noindent Thus we can renormalize each velocity with 
+
+\begin{equation}
+v = \lambda v_o
+\end{equation}
+
+\noindent where $\lambda = (T/T_o)^{3/2}$ to ensure a constant temperature.  \\
+
+Once the system is at a constant temperature, we can calculate the correlation function.  The correlation function measures the amount of disorder in a system, and therefore gives a distinct shape based on the state of matter - solid, liuqid or gas.  To calculate the correlation function, $g(r)$, we count the number of particles inside a spherical shell of $r + \delta r$ and normalize by the volume of that shell.  Taking $\delta r$ to be much smaller than $r$, we can approximate the volume of each shell by
+
+\begin{equation}
+\begin{split}
+\Delta V & = \frac{4}{3} \pi (r+\delta r)^3 - \frac{4}{3} \pi r^3 \\
+& = \frac{4}{3} \pi \left [ r^3 \left (1+\frac{\delta r}{r} \right )^3 - r^3 \right ] \\
+& = \frac{4}{3} \pi \left [ r^3 \left ( 1 + 3\frac{\delta r}{r} + \mathcal{O} (\delta r ^2) \right ) - r^3 \right ] \\
+& = 4 \pi r^2 \delta r
+\end{split}
+\end{equation}
+
+\noindent where the third line uses the Taylor approximation of $(1+z)^n = 1 + nz+ ...$  Thus the correlation function is
+
+\begin{equation}
+g(r) = \frac{N_r}{4 \pi r^2 \delta r}
+\end{equation}
+
+\noindent where $N_r$ is the number of particles found in the shell $r + \delta r$.  \\
+
+The correlation function has distinct shapes for each state of matter.  Solids are classified by period spikes which indicates a lattice of particles.  Liquids \textbf{I don't remember their characteristic}.  Lastly, gases show an exponential-like decay in their correlation function.  These are the characteristics we will be looking to explore in our calculations.
+
+\section{Discussion}
+\label{disc}
+Here is where the initial conditions of the system should be discussed.
+\subsection{Thermostat}
+
+Give a target temperature of each thermostat (whatever's used below) and an error on it.  Also include a plot or two of the temperature over time to see how quickly the system reaches the target temperature - based on how often the velocity is renormalized.
+
+\subsection{Correlation Function}
+
+One for each of the three states of matter - can either keep the same density and run the calculation for different temperatures or take one temperature and see if we can find different densities at which each state of matter exists.  Both are probably interesting.
+
+\subsection{Pressure}
+
+Find the pressure of different systems under different conditions - temperature and density.  Make sure to include errors on each number.
+
+\section{Conclusion}
+\label{conc}
+
+\textbf{Also need to include a bibliography with bibtex}
+
+\appendix 
+
+\section{Error Calculations}
+
+Like experimental measurements, numerical calculations should also include error bars.  There are many ways that these uncertainties can be calculated, but in this paper, we will be using \textbf{name of method - or some description}.  Just as in an experiment where we would ideally take many measurements and calculate an error based on their standard deviations from the mean, we can use the same concept to put error bars on our calculated values.  There are several ways that we can do this.  Perhaps, the most obvious one is to run the calculation several times to generate a mean and a standard deviation.  However, this process is lengthy and can be heavily dependent on the seed of the random number generator used in initializing positions and velocities the particles.  \\
+
+It is, therefore, much better to run one simulation and average over many blocks of time.  In each simulation, after a long enough period of time, the quantity of interests will settle on some mean value with every time step oscillating around this value, as show in Figure \textbf{plot of total energy or something like that which shows the oscillations from the mean and the cuts defining each time step block}.  While each value depends on the previous value, averaging over a large enough number of time steps will produce a value independent of the previous block of time steps.  For each of these blocks, say 1500 (\textbf{put in actual number that we used}) time steps, an average is calculated (this is equivalent to having many measurements from an experiment), and then from each of these "measurements", we can calculate an average value for our simulation and an error for that value.  The average value is defined as 
+
+\begin{equation}
+\bar{C} = \frac{1}{N}\sum \limits _{i=1}^N C_i 
+\end{equation}
+
+\noindent and the error is calculated from 
+
+\begin{equation}
+E = \frac{1}{\sqrt{N}}\sum \limits _{i=1}^N (\bar{C} - C_{i})
+\end{equation}
+
+\noindent where $E$ is the error on a given quantity, $N$ is the number of time-step blocks, and $C_i$ is the quantity value for each time step block.  \textbf{I'm not sure if this equation is actually correct.}\\
+
+This ensures that we include fluctuations in the numbers that we report, as well as account for a decreasing error with an increasing number of "measurements".  
+
+\end{multicols}
+
+\end{document}
