@@ -20,6 +20,10 @@
 
 \section{Introduction}
 
+-demand for researching dynamical phenomena
+-MD is based on equations of motion, --> obtain static properties (pressure energy etc) but also one can obtain the location and momentum of each particle at each moment in time.
+-The latter is an advantage over other methods. \cite{thijssen}
+-MD is for example applied in biological physics, in the study of macormolecules \cite{deGroot}
 \textbf{Somewhere put something about the initial conditions - the whole crystal things, and pictures and whatnot for the unit cell, etc.} \\
 
 \textbf{Need some actual introduction about why molecular dynamics calculations are interesting or something of the sort to get the paper/report going.  Can't just jump into everything.  Some background or something.} \\
@@ -149,6 +153,14 @@ g(r) = \frac{N_r}{4 \pi r^2 \delta r}
 
 The correlation function has distinct shapes for each state of matter.  Solids are classified by period spikes which indicates a lattice of particles.  Liquids \textbf{I don't remember their characteristic}.  Lastly, gases show an exponential-like decay in their correlation function.  These are the characteristics we will be looking to explore in our calculations.
 
+\noindent Another physical quantity that can be calculated is the pressure. The pressure can be calculated by making use of the following formula:
+
+\begin{equation}
+p = \frac{NK_{B}T}{V} + \frac{1}{3V}\avg{\sum\limits_{i}^N R_{ij}\frac{\partial u(r)}{\partial R_{ij}}} - \frac{2$\pi$N^2}{3V^2}\int_R_{c}^\inf\! R^3 \frac{\partial u(r)}{\partial R}g(r)dR
+\end{equation}
+
+\\
+
 \section{Discussion}
 \label{disc}
 Here is where the initial conditions of the system should be discussed.
@@ -191,6 +203,18 @@ E = \frac{1}{\sqrt{N}}\sum \limits _{i=1}^N (\bar{C} - C_{i})
 
 This ensures that we include fluctuations in the numbers that we report, as well as account for a decreasing error with an increasing number of "measurements".  
 
+
+
 \end{multicols}
+
+\begin{thebibliography}{99}
+
+\bibitem{deGroot}
+  B. de Groot,
+  Computational Biomolecular Dynamics Group, Max Planck lnstitute for Biophysical Chemistry. Retrieved from http://www3.mpibpc.mpg.de/groups/de_groot/
+  
+\bibitem{thijssen}
+  Thijssen, J.M.(2007). Computational Physics. Cambridge, Cambridge University Press.
+\end{thebibliography}
 
 \end{document}

@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pylab
 
-def cor(npdim,N,distances,nbins,finalbins,plotflag):
+def cor(npdim,N,distances,nbins,finalbins,plotflag,Ttarg,density):
 #find the correlation function of the system
   dmax = np.sqrt(5.)*npdim
   bin_vec = np.zeros(nbins, dtype = float)
@@ -23,20 +23,21 @@ def cor(npdim,N,distances,nbins,finalbins,plotflag):
   for bin_num in range(nbins):
     Rout = (bin_num + 2)*dR
     Rin[bin_num] = (bin_num + 1)*dR
-    #Rin[0] = dR
-    #volume = 4.*np.pi*(Rout**3 - Rin[bin_num]**3)/3.
     bin_vec[bin_num] = bin_vec[bin_num]/(4*np.pi*Rin[bin_num]**2*dR)
-    #print bin_vec
- 
+    
   
-  
-
+  finalbins[0] = 0.0001 # to make sure that the plot starts at r=0  
   if plotflag == 1:
-    fig2 = plt.bar(Rin,finalbins,width=dR)
+    plt.bar(Rin,finalbins,width=dR)
+    plt.ylabel('g(r)')
+    plt.xlabel('r')
+    plt.title('Correlationfunction')
+    plt.text(5,max(finalbins)-0.1,r'$T$=%s, $\rho$=%s'%(Ttarg,density)) # x and y values for position of text are choosen for 864 particles
     plt.show()
-
-
-  
+    print max(Rin)
+    plt.savefig('correlationfunctionT%sRho%s.jpg'%(Ttarg,density))
+    
+ 
   return bin_vec
   
 

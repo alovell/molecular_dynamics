@@ -17,18 +17,18 @@ import init_sys
 import correlationmodule
 
 #flags
-corrflag = 2
+corrflag = 1 # 2 to obtain pressure, 1 to obtain correlation function
 
 # independent parameters
 dt = 0.004
-N=108
-lpnum = 1000
+N=864
+lpnum = 500
 cutoff = int(lpnum/5.)
-density = 0.88
+density = 1.2
 temp = 0.8
-Ttarg = 1
+Ttarg = 0.5
 Kb =  1
-nbins = 100 #number of radial shells
+nbins = 250 #number of radial shells
 n = 20 #number of timesteps per timeblock in pressure calculation
 
 
@@ -66,9 +66,9 @@ for lp in range(lpnum):
       mom = mom*lamda
   elif corrflag == 1:
     corrflag = 0
-    bin_vec_tot = bin_vec_tot + correlationmodule.cor(npdim,N,distances,nbins,finalbins,corrflag)
+    bin_vec_tot = bin_vec_tot + correlationmodule.cor(npdim,N,distances,nbins,finalbins,corrflag,Ttarg,density)
     corrflag = 1
-  elif corrflag ==2:
+  elif corrflag == 2:
     prestime[cnt,:] = density*((2*Ken/(3*N)) + presvirial/(3*N) + np.pi*N*0.97596/Ken) 
     cnt = cnt + 1
 
@@ -79,12 +79,12 @@ for p in range((lpnum-cutoff)/n):
 
 
 
-
-#fig1 = plt.plot(kenarray)
-#fig2 = plt.plot(toten)
-#fig3 = plt.plot(toten-kenarray)
-fig4 = plt.plot(averagedp)
-plt.show()
+if corrflag == 2:
+  #fig1 = plt.plot(kenarray)
+  #fig2 = plt.plot(toten)
+  #fig3 = plt.plot(toten-kenarray)
+  fig4 = plt.plot(averagedp)
+  plt.show()
 
 print min(prestime), max(prestime)
 
@@ -95,12 +95,13 @@ sdomavp = np.std(averagedp)/np.sqrt(len(averagedp))
 
 print mnp, sdomp, mnavp, sdomavp
 
-#print toten
+#print bin_vec_tot
 
 # Calculate and plot correlationfunction
 if corrflag == 1:
   finalbins = 2*bin_vec_tot/((lpnum - cutoff)*density*(N-1))
-  bin_vec = correlationmodule.cor(npdim,N,distances,nbins,finalbins,corrflag)
+  #print finalbins
+  bin_vec = correlationmodule.cor(npdim,N,distances,nbins,finalbins,corrflag,Ttarg,density)
 
 
 
