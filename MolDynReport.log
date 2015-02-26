@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.22)  26 FEB 2015 17:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.22)  26 FEB 2015 17:33
 entering extended mode
 **MolDynReport.tex
 ("C:\Users\Perry\Documents\Jaar 6 AP\ICCP\molecular_dynamics\MolDynReport.tex"
@@ -237,18 +237,18 @@ LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
 ("C:\Users\Perry\Documents\Jaar 6 AP\ICCP\molecular_dynamics\MolDynReport.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 (C:\Users\Perry\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count114
@@ -299,78 +299,78 @@ LaTeX Font Info:    ... okay on input line 16.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+LaTeX Font Info:    Try loading font information for U+msa on input line 21.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+LaTeX Font Info:    Try loading font information for U+msb on input line 21.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-LaTeX Warning: Citation `thijssen' on page 1 undefined on input line 30.
+LaTeX Warning: Citation `thijssen' on page 1 undefined on input line 31.
 
 
-LaTeX Warning: Citation `deGroot' on page 1 undefined on input line 30.
+LaTeX Warning: Citation `deGroot' on page 1 undefined on input line 31.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
 
-LaTeX Warning: Reference `' on page 1 undefined on input line 39.
+LaTeX Warning: Reference `' on page 1 undefined on input line 40.
 
 
-LaTeX Warning: Reference `' on page 1 undefined on input line 39.
+LaTeX Warning: Reference `' on page 1 undefined on input line 40.
 
 
-LaTeX Warning: Reference `' on page 1 undefined on input line 39.
+LaTeX Warning: Reference `' on page 1 undefined on input line 40.
 
 <VLJ.pdf, id=1, 361.35pt x 207.77625pt>
 File: VLJ.pdf Graphic file (type pdf)
  <use VLJ.pdf>
-Package pdftex.def Info: VLJ.pdf used on input line 54.
+Package pdftex.def Info: VLJ.pdf used on input line 55.
 (pdftex.def)             Requested size: 229.8775pt x 132.18056pt.
  [1
 
 {C:/Users/Perry/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Pe
 rry/Documents/Jaar 6 AP/ICCP/molecular_dynamics/VLJ.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
 
-LaTeX Warning: Reference `verlet' on page 2 undefined on input line 97.
+LaTeX Warning: Reference `verlet' on page 2 undefined on input line 98.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
@@ -404,7 +404,7 @@ es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on MolDynReport.pdf (4 pages, 182524 bytes).
+Output written on MolDynReport.pdf (4 pages, 182435 bytes).
 PDF statistics:
  78 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
