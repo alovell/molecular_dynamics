@@ -4,7 +4,10 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
-\usepackage{multicol}
+\usepackage{multicol,caption}
+\usepackage{cite}
+
+\bibliographystyle{plain}
 
 \begin{document}
 
@@ -20,13 +23,10 @@
 
 \section{Introduction}
 
--demand for researching dynamical phenomena
--MD is based on equations of motion, --> obtain static properties (pressure energy etc) but also one can obtain the location and momentum of each particle at each moment in time.
--The latter is an advantage over other methods. \cite{thijssen}
--MD is for example applied in biological physics, in the study of macormolecules \cite{deGroot}
-\textbf{Somewhere put something about the initial conditions - the whole crystal things, and pictures and whatnot for the unit cell, etc.} \\
-
-\textbf{Need some actual introduction about why molecular dynamics calculations are interesting or something of the sort to get the paper/report going.  Can't just jump into everything.  Some background or something.} \\
+-demand for researching dynamical phenomena \\
+-MD is based on equations of motion, --> obtain static properties (pressure energy etc) but also one can obtain the location and momentum of each particle at each moment in time. \\
+-The latter is an advantage over other methods. \cite{thijssen} \\ 
+-MD is for example applied in biological physics, in the study of macormolecules \cite{deGroot} \\
 
 This report is broken into the following sections.  In Section \ref{theory}, we will briefly discuss the theory behind the calculations in this report.  Section \ref{disc} presents the results of our calculations, including a thermostat, correlation functions for the three states of matter, and pressure calculations.  We will then give a brief conclusion in section \ref{conc}.  An appendix is found at the end of this report to discuss the method used for error analysis.  
 
@@ -35,28 +35,37 @@ This report is broken into the following sections.  In Section \ref{theory}, we 
 
 \subsection{Crystalline Array}
 
+The lattice structure of argon is face-centered cubic (fcc).  The unit cell in an fcc crystal contains four atoms in the shape of a triangular pyramid, Figure \ref{}.  In the fcc lattice, the sheets of atoms stack on top of each other in such as way that every other layer is off-set by half of an atomic radius, Figure \ref{}, left.  (This is in contrast to a hpc lattice where every other sheet of atoms lines up, Figure \ref{}, right.)  We use the fcc configuration for our simulation because the equilibrium state of argon is an fcc lattice.  
+
 \subsection{Interaction}
 
 To describe the interaction between each of the argon atoms, we use the Lennard-Jones potential, which accounts for the short-range repulsive force between the two atoms due to Coulomb repulsion and the longer-range attractive forces from dipole-dipole and dipole-induced dipole forces.  The form of the potential is as follows:
 
 \begin{equation}
+\label{LJpot}
 V_{LJ}(r) = 4 \epsilon \left [ \left (\frac{\sigma}{r} \right )^{12} - \left (\frac{\sigma}{r} \right )^{6} \right ]
 \end{equation}
 
-\noindent where $r$ is the distance between the two atoms, $\epsilon$ gives the depth of the potential well, and $\sigma = 2R $ where $R$ is the internuclear distance between the two atoms - $\sigma$ measures the distance at which the potential between the two particles is zero.  \\
+\noindent where $r$ is the distance between the two atoms, $\epsilon$ gives the depth of the potential well, and $\sigma = 2R $ where $R$ is the internuclear distance between the two atoms - $\sigma$ measures the distance at which the potential between the two particles is zero.  An example of the Lennard-Jones potential can be found in Figure \ref{VLJfig}.
 
-\textbf{put in a figure of the LJ potential and label everything - $\sigma$ and $\epsilon$} \\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\linewidth]{VLJ.pdf}
+\caption{The shape of the Lennard-Jones potential.  Here, $\sigma=1$ (where the potential crosses the r-axis) and $\epsilon =1$ (the depth of the interaction).}
+\label{VLJfig}
+\end{center}
+\end{figure}
 
-When the two atoms are far enough apart, they can be viewed as non-interacting.  For this reason, we can introduced a cut-off radius, $r_c$, beyond which the potential is taken to be zero.  Thus, we use the interaction \textbf{Look up how you've done this before} \\
+When the two atoms are far enough apart, they can be viewed as non-interacting.  For this reason, we can introduced a cut-off radius, $r_c$, beyond which the potential is taken to be zero.  Thus, we use the interaction 
 
-%\begin{equation}
-%V_{LJ} = \left \{ \begin{array}{lr} 4 \epsilon \left [ \left (\frac{\sigma}{r} \right )^{12} - \left (\frac{\sigma}{r} \right )^{6} \right ] & r \le r_c \\
-%0 & r > r_c 
-%\end{array}
-%\right 
-%\end{equation}
+\begin{equation}
+V_{LJ} (r) = \begin{cases}
+4 \epsilon \left [ \left (\frac{\sigma}{r} \right )^{12} - \left (\frac{\sigma}{r} \right )^{6} \right ] & r \le r_c \\
+0 & r > r_c
+\end{cases}
+\end{equation}
 
-From this, we immediately know the form of the force between the two atoms as well.  The force is radial, acting to bring the atoms closer together if $r > r_{\mathrm{min}}$ and repelling them if $r < r_{\mathrm{min}}$.  For our purposes, it it convenient to write the forces in terms of their Cartesian coordinates.  
+From the expression for the Lennard-Jones potential, (\ref{LJpot}), we immediately know the form of the force between the two atoms as well.  The force is radial, acting to bring the atoms closer together if $r > r_{\mathrm{min}}$ and repelling them if $r < r_{\mathrm{min}}$.  For our purposes, it it convenient to write the forces in terms of their Cartesian coordinates.  
 
 \begin{equation}
 \begin{split}
@@ -67,8 +76,6 @@ F_z = 24 \epsilon z \\
 \end{equation}
 
 \noindent From the force between each pair of particles, the momenta and positions can be calculated, leading to the dynamics of the system.  This also allows calculation of thermodynamical quantities, such as pressure and correlation functions.\\
-
-For these calculations, we will take $\epsilon =1$ and $\sigma =1$.  \textbf{This is a terrible sentence:  To extract dimensionally correct quantities, we can just account for this at the end of the calculations. } 
 
 \subsection{Velocity Verlet Method}
 
@@ -104,7 +111,7 @@ Along with taking $\epsilon =1$ and $\sigma =1$ in the Lennard-Jones potential, 
 
 Along with updating the postion an momentum of each particle to see how the system equilibriates, there are also several thermodynamical quantities that we can calculate in order to learn more about the system we have created.  Before calculating any quantities, we want to model our system as being in contact with a thermostat to keep it at a constant temperature.  We do this by renormalizing the velocity.  \\
 
-Through the Virial Theorem, the average velocity and temperature of a system are related by
+Through the Equipartition Theorem, the average velocity and temperature of a system are related by
 
 \begin{equation}
 \label{vir}
@@ -151,17 +158,69 @@ g(r) = \frac{N_r}{4 \pi r^2 \delta r}
 
 \noindent where $N_r$ is the number of particles found in the shell $r + \delta r$.  \\
 
-The correlation function has distinct shapes for each state of matter.  Solids are classified by period spikes which indicates a lattice of particles.  Liquids \textbf{I don't remember their characteristic}.  Lastly, gases show an exponential-like decay in their correlation function.  These are the characteristics we will be looking to explore in our calculations.
+The correlation function has distinct shapes for each state of matter.  Solids are classified by period spikes which indicates a lattice of particles.  Liquids \textbf{I don't remember their characteristic}.  Lastly, gases show an exponential-like decay in their correlation function.  These are the characteristics we will be looking to explore in our calculations. \\
 
-\noindent Another physical quantity that can be calculated is the pressure. The pressure can be calculated by making use of the following formula:
+%\noindent Another physical quantity that can be calculated is the pressure. The pressure can be calculated by making use of the following formula:
 
 %\begin{equation}
 %  = \frac{NK_{B}T}{V} + \frac{1}{3V}\avg{\sum\limits_{i}^N %R_{ij}\frac{\partial u(r)}{\partial R_{ij}}} - \frac{2$\pi%$N^2}{3V^2}\int_R_{c}^\inf\! R^3 \frac{\partial u(r)}{\partial R}g(r)dR
 %\end{equation}
 
+Another physical quantity that can be calculated is the pressure.  With a constant temperature, the pressure of a system can be found using the Virial Theorem.  Using Hamilton's equations
+
+\begin{equation}
+\begin{split}
+\dot{\textbf{r}}_a = \textbf{v}_a \\
+\dot{\textbf{p}}_a = \textbf{F}_a 
+\end{split}
+\end{equation}
+
+\noindent and taking the time average of $\sum \limits _a (\textbf{r}_a \cdot \textbf{p}_a)$, we have
+
+\begin{equation}
+\begin{split}
+\overline{\frac{d}{dt} \sum \limits _a \textbf{r}_a \cdot \textbf{p}_a} & = \overline{\sum \limits _a \textbf{v}_a \cdot \textbf{p}_a + \textbf{r}_a \cdot \textbf{F}_a} \\
+& = 0
+\end{split}
+\end{equation}
+
+\noindent  For non-relativistic particles 
+
+\begin{equation}
+K = \sum \limits _a \frac{\textbf{p}_{a}^2}{2m_a}
+\end{equation}
+
+\noindent and 
+
+\begin{equation}
+\begin{split}
+\overline{\sum \limits _a \textbf{v}_a \cdot \textbf{p}_a} & = 2\bar{K} \\
+& = - \overline{\sum \limits _a \textbf{r}_a \cdot \textbf{F}_a}
+\end{split}
+\end{equation}
+
+\noindent This gives the Virial between two particles.  We can add this term to our expected energy-pressure relation for non-interacting particles, $\bar{K}=\frac{3}{2}PV$, to find the total average kinetic energy of a system of interacting particles:  
+
+\begin{equation}
+\bar{K} = \frac{3}{2} PV - \frac{1}{2} \overline{\sum \limits _{a \ne b} r_{ab} F(r_{ab})}
+\end{equation}
+
+\noindent from here, straight-forward algebraic manipulations give the pressure.
+
+\begin{equation}
+P = \frac{2}{3V} \left [ \bar{K} + \frac{1}{2} \overline{\sum \limits _{a\ne b} r_{ab} F(r_{ab})} \right ]
+\end{equation}
+
+\noindent Here, $r_{ab} = |\textbf{r}_a - \textbf{r}_b|$, the distance between any pair of particles.
+
 \section{Discussion}
 \label{disc}
-Here is where the initial conditions of the system should be discussed.
+In the following subsections, we present the results of our simulation.
+
+\subsection{Initial Conditions}
+
+We started with our system in a \textbf{crystal name} crystalline configuration (recall Figure \textbf{fig}).  Our simulation modeled  108 (\textbf{probably more at the end of the project}) argon atoms with a unit cell length of \textbf{2 fm}.  As mentioned above, we will take $\sigma=\epsilon=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
+
 \subsection{Thermostat}
 
 Give a target temperature of each thermostat (whatever's used below) and an error on it.  Also include a plot or two of the temperature over time to see how quickly the system reaches the target temperature - based on how often the velocity is renormalized.
@@ -176,8 +235,6 @@ Find the pressure of different systems under different conditions - temperature 
 
 \section{Conclusion}
 \label{conc}
-
-\textbf{Also need to include a bibliography with bibtex}
 
 \appendix 
 
@@ -202,17 +259,18 @@ E = \frac{1}{\sqrt{N}}\sum \limits _{i=1}^N (\bar{C} - C_{i})
 This ensures that we include fluctuations in the numbers that we report, as well as account for a decreasing error with an increasing number of "measurements".  
 
 
-
 \end{multicols}
 
-\begin{thebibliography}{99}
+\bibliography{MolDynBib}
 
-\bibitem{deGroot}
-  B. de Groot,
-  Computational Biomolecular Dynamics Group, Max Planck lnstitute for Biophysical Chemistry. %Retrieved from http://www3.mpibpc.mpg.de/groups/de_groot/
+%\begin{thebibliography}{99}
+
+%\bibitem{deGroot}
+  %B. de Groot,
+  %Computational Biomolecular Dynamics Group, Max Planck lnstitute for Biophysical Chemistry. %Retrieved from http://www3.mpibpc.mpg.de/groups/de_groot/
   
-\bibitem{thijssen}
-  Thijssen, J.M.(2007). Computational Physics. Cambridge, Cambridge University Press.
-\end{thebibliography}
+%\bibitem{thijssen}
+ % Thijssen, J.M.(2007). Computational Physics. Cambridge, Cambridge University Press.
+%\end{thebibliography}
 
 \end{document}

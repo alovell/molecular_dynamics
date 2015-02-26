@@ -1,0 +1,15 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: MolDynReport.aux
+The style file: plain.bst
+Database file #1: MolDynBib.bib
+Warning--string name "j.m." is undefined
+--line 8 of file MolDynBib.bib
+I was expecting a `,' or a `}'---line 8 of file MolDynBib.bib
+ :   author = j.m. 
+ :                 Thijssen,
+I'm skipping whatever remains of this entry
+Warning--to sort, need author, editor, or key in thijssen
+Warning--empty author and editor in thijssen
+Warning--empty title in thijssen
+Warning--empty publisher in thijssen
+Warning--empty year in thijssen
+(There was 1 error message)
