@@ -1,3 +1,13 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{deGroot}
+B.~de~Groot.
+\newblock Computational biomolecular dynamics group.
+
+\bibitem{thijssen}
+J.M. Thijssen.
+\newblock {\em Computational Physics}, volume~4 of {\em 10}.
+\newblock Cambridge University Press, Cambridge, 3 edition, 7 2007.
+\newblock An optional note.
 
 \end{thebibliography}

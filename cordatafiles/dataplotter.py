@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 
 Rin = np.loadtxt("cordataT0.5rho1.2N864Rin.txt")
 finalbins = np.loadtxt("cordataT0.5rho1.2N864finbin.txt")
-prestime = np.loadtxt("presdataT0.5rho1.2N864n100lpnum10000prestime.txt")
-averagedp = np.loadtxt("presdataT0.5rho1.28N864n100lpnum10000averagedp.txt")
+prestime = np.loadtxt("presdataT3rho0.3N864n100lpnum10000prestime.txt")
+averagedp = np.loadtxt("presdataT3rho0.3N864n100lpnum10000averagedp.txt")
 
 #values for the different parameters, need to be equal to those mentioned in the filenames.
 Ttarg = 0.5
@@ -46,8 +46,10 @@ def presplotter(prestime,averagedp,n):
 
 # calculating the errors of the pressure and energy
 mnp = np.mean(prestime)
-sdomp = np.std(prestime)/np.sqrt(len(prestime))
-mnavp = sum(averagedp)/len(averagedp)
-sdomavp = np.std(averagedp)/np.sqrt(len(averagedp))
+sdp = np.std(prestime)
+sdpb = np.std(averagedp)
+sdompb =  np.std(averagedp)/np.sqrt(len(averagedp))
+
+print 'mnp=',mnp,'sdp=',sdp,'sdpb=',sdpb,'sdompb=',sdompb 
 
 
