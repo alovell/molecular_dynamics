@@ -2,10 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def pres(lpnum,cutoff,n,prestime):
+def pres(lpnum,cutoff,n,prestime,toten,Ttarg,density,N):
   averagedp = np.zeros((lpnum-cutoff)/n, dtype=float)
   for p in range((lpnum-cutoff)/n):
     averagedp[p] = np.mean(prestime[n*p:n*(p+1)])
+    
+  np.savetxt("presdataT%srho%sN%sn%slpnum%sprestime.txt"%(Ttarg,density,N,n,lpnum),prestime)
+  np.savetxt("presdataT%srho%sN%sn%slpnum%saveragedp.txt"%(Ttarg,density,N,n,lpnum),averagedp)
+  np.savetxt("totenT%srho%sN%sn%slpnum%s.txt"%(Ttarg,density,N,n,lpnum),toten)
 
 
 
@@ -14,8 +18,6 @@ def pres(lpnum,cutoff,n,prestime):
   #fig3 = plt.plot(toten-kenarray)
   fig4 = plt.plot(averagedp)
   plt.show()
-
-  print min(prestime), max(prestime)
 
   mnp = np.mean(prestime)
   sdomp = np.std(prestime)/np.sqrt(len(prestime))
