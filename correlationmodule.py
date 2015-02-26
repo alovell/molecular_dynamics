@@ -29,18 +29,17 @@ def cor(npdim,N,distances,nbins,finalbins,plotflag,Ttarg,density):
   finalbins[0] = 0.0001 # to make sure that the plot starts at r=0  
   if plotflag == 1:
     plt.plot(Rin,finalbins)#,width=dR)
-    plt.ylim([0,max(Rin)*(3/8)])
+    plt.xlim([0,max(Rin)*(5/8.)])
     plt.ylabel('g(r)')
     plt.xlabel('r')
     plt.title('Correlationfunction')
-    plt.text(max(Rin)*(1/4),max(finalbins)-0.1,r'$T$=%s, $\rho$=%s'%(Ttarg,density)) # x and y values for position of text are choosen for 864 particles
+    plt.text(max(Rin)*(1/4.),max(finalbins)-0.1,r'$T$=%s, $\rho$=%s'%(Ttarg,density)) # x and y values for position of text are choosen for 864 particles
     plt.show()
     print max(Rin)
     plt.savefig('correlationfunctionT%sRho%s.jpg'%(Ttarg,density))
-    f = open("cordataT%srho%sN%s.txt"%(Ttarg,density,N), "w")
-    f.write(str(Rin) + '\n')
-    f.write(str(finalbins))     
-    f.close()
+    np.savetxt("cordataT%srho%sN%sRin.txt"%(Ttarg,density,N),Rin)
+    np.savetxt("cordataT%srho%sN%sfinbin.txt"%(Ttarg,density,N),finalbins)
+    
     
  
   return bin_vec

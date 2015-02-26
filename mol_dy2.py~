@@ -22,11 +22,11 @@ corrflag = 1 # 2 to obtain pressure, 1 to obtain correlation function
 
 # independent parameters
 dt = 0.004
-N=32
-lpnum = 50
+N=864
+lpnum = 500
 cutoff = int(lpnum/5.)
 density = 0.8
-temp = 0.8
+temp = 3
 Ttarg = 1
 Kb =  1
 nbins = 250 #number of radial shells
