@@ -24,9 +24,9 @@ dt = 0.004
 N=864
 lpnum = 500
 cutoff = int(lpnum/5.)
-density = 1.2
+density = 0.8
 temp = 0.8
-Ttarg = 0.5
+Ttarg = 1
 Kb =  1
 nbins = 250 #number of radial shells
 n = 20 #number of timesteps per timeblock in pressure calculation
@@ -73,27 +73,32 @@ for lp in range(lpnum):
     cnt = cnt + 1
 
 
-averagedp = np.zeros((lpnum-cutoff)/n, dtype=float)
-for p in range((lpnum-cutoff)/n):
-  averagedp[p] = np.mean(prestime[n*p:n*(p+1)])
-
-
-
+#pressure module
 if corrflag == 2:
-  #fig1 = plt.plot(kenarray)
-  #fig2 = plt.plot(toten)
-  #fig3 = plt.plot(toten-kenarray)
-  fig4 = plt.plot(averagedp)
-  plt.show()
+  pressuremodule.pres(lpnum,cutoff,n,prestime)
 
-print min(prestime), max(prestime)
+def pres(lpnum,cutoff,n,prestime):
+  averagedp = np.zeros((lpnum-cutoff)/n, dtype=float)
+  for p in range((lpnum-cutoff)/n):
+    averagedp[p] = np.mean(prestime[n*p:n*(p+1)])
 
-mnp = np.mean(prestime)
-sdomp = np.std(prestime)/np.sqrt(len(prestime))
-mnavp = sum(averagedp)/len(averagedp)
-sdomavp = np.std(averagedp)/np.sqrt(len(averagedp))
 
-print mnp, sdomp, mnavp, sdomavp
+
+  if corrflag == 2:
+    #fig1 = plt.plot(kenarray)
+    #fig2 = plt.plot(toten)
+    #fig3 = plt.plot(toten-kenarray)
+    fig4 = plt.plot(averagedp)
+    plt.show()
+
+  print min(prestime), max(prestime)
+
+  mnp = np.mean(prestime)
+  sdomp = np.std(prestime)/np.sqrt(len(prestime))
+  mnavp = sum(averagedp)/len(averagedp)
+  sdomavp = np.std(averagedp)/np.sqrt(len(averagedp))
+
+  print mnp, sdomp, mnavp, sdomavp
 
 #print bin_vec_tot
 
@@ -123,22 +128,3 @@ if corrflag == 1:
 
 
 
-
-
-
-
-
-#  print sum(Ken), sum(pot)[0], toten[0]#, np.sum(mom)
-# Plotting the positions
-
-
-
-'''
-  fig = pylab.figure()
-  ax = Axes3D(fig) 
-  ax.scatter(pos[:,0],pos[:,1],pos[:,2],c='b')
-  ax.set_xlabel('X Label')
-  ax.set_ylabel('Y Label')
-  ax.set_zlabel('Z Label')
-  plt.show()
- '''

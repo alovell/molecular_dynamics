@@ -1,15 +1,46 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: MolDynReport.aux
+This is BibTeX, Version 0.99d (TeX Live 2014/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: MolDynReport.aux
 The style file: plain.bst
 Database file #1: MolDynBib.bib
-Warning--string name "j.m." is undefined
---line 8 of file MolDynBib.bib
-I was expecting a `,' or a `}'---line 8 of file MolDynBib.bib
- :   author = j.m. 
- :                 Thijssen,
-I'm skipping whatever remains of this entry
-Warning--to sort, need author, editor, or key in thijssen
-Warning--empty author and editor in thijssen
-Warning--empty title in thijssen
-Warning--empty publisher in thijssen
-Warning--empty year in thijssen
-(There was 1 error message)
+You've used 2 entries,
+            2118 wiz_defined-function locations,
+            511 strings with 4219 characters,
+and the built_in function-call counts, 469 in all, are:
+= -- 41
+> -- 14
+< -- 1
++ -- 6
+- -- 4
+* -- 27
+:= -- 83
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 8
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 20
+empty$ -- 46
+format.name$ -- 4
+if$ -- 97
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 2
+newline$ -- 13
+num.names$ -- 4
+pop$ -- 12
+preamble$ -- 1
+purify$ -- 6
+quote$ -- 0
+skip$ -- 16
+stack$ -- 0
+substring$ -- 10
+swap$ -- 4
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 6
+warning$ -- 0
+while$ -- 4
+width$ -- 3
+write$ -- 24
