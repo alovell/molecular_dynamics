@@ -1,3 +1,7 @@
+%Hoi Perry, je toevoegingen zijn:
+%-Verlet methode
+%Errorberekening
+
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{float}
@@ -23,7 +27,7 @@
 
 \section{Introduction}
 
-There is an increasing demand for knowledge on the dynamic properties of physcial systems. Where other methods such as MonteCarlo methods are useful to find static properties of such systems, Molecular Dynamics (MD) can be used to research the dynamis of such systems. MDisbased on the equations of motion. For this reason MD allows us to track down the position and momentum of each particle at each moment in time. Hence besides static properties, MD can be used to research how particles effect eachother in multiple particle systems, which gives insight in the dynamics of such systems \cite{thijssen}. MD is applied in many fields, for example in biological physics in the study of macromolecules \cite{deGroot} \\
+There is an increasing demand for knowledge on the dynamic properties of physcial systems. Where other methods such as MonteCarlo methods are useful to find static properties of such systems, Molecular Dynamics (MD) can be used to research the dynamis of such systems. MD is based on the equations of motion. For this reason MD allows us to track down the position and momentum of each particle at each moment in time. Hence besides static properties, MD can be used to research how particles effect eachother in multiple particle systems, which gives insight in the dynamics of such systems \cite{thijssen}. MD is applied in many fields, for example in biological physics in the study of macromolecules \cite{deGroot} \\
 
 This report is broken into the following sections.  In Section \ref{theory}, we will briefly discuss the theory behind the calculations in this report.  Section \ref{disc} presents the results of our calculations, including a thermostat, correlation functions for the three states of matter, and pressure calculations.  We will then give a brief conclusion in section \ref{conc}.  An appendix is found at the end of this report to discuss the method used for error analysis.  
 
@@ -76,8 +80,6 @@ F_z = 24 \epsilon z \\
 
 \subsection{Velocity Verlet Method}
 
-\textbf{The paper is in Phys. Rev. 159, 98 (1967).  Also I have it written down in my comp phys notebook, so take the equations out of there - and make sure they match up with what is in the code.} This paper is the Verlet method and not the velocity Verlet method, which seem to be different.  Very similar to the \textbf{leapfrog algorithm}.  \\
-
 The method chosen for the position and momentum calculations is the Verlet method.  While both can be calculated from introductory physics equations,
 
 \begin{equation}
@@ -92,17 +94,21 @@ p_{i+1}=p_i + F \Delta t
 x_{i+1} = x_i + \frac{p_i}{m} + \frac{1}{2}\frac{F(\Delta t)^2}{m}
 \end{equation}
 
-\noindent this can lead to numerical inaccuracies in the position calculation because of the dependence on the square of the time step and both the previous force and momentum.  \textbf{Now talk about the Verlet Method and how it works, which was actually used in the original paper during a molecular dynamics simulation of argon.}\\
+\noindent this can lead to numerical inaccuracies in the position calculation because of the dependence on the square of the timestep and both the previous force and momentum. Therefore, in our algorithm we make use of the Verlet method due to its accuracy, stability and its tendency to traject the same path in phase space within numerical precision. In our simulation we will need the momenta and positions at every time step to calculate parameters such as energy. A variety of the Verlet method which accomplishes this is known as the Verlet velocity scheme \ref{verlet}.
 
-The method still uses (\ref{momeqn}) for the updated momentum calculation, but instead of (\ref{poseqn}) for updating the position, one has
+% link: http://www.physics.udel.edu/~bnikolic/teaching/phys660/numerical_ode/node5.html
 
 \begin{equation}
-\mathrm{position}
+\label{verletvscheme}
+\begin{split}
+p_{i+\frac{1}{2}}=p_i + \frac{F_i}{2} \Delta t \\
+r_{i+1}=r_i+\frac{p_{i+\frac{1}{2}}}{m} \Delta t \\
+F_{i+1}=-\frac{1}{m} \frac{\partial V_{LJ}(r_i)}{\partial r} \\
+p_{i+1} = p_{i+\frac{1}{2}} + \frac{F_{i+1}}{2} \Delta t \\
+\end{split}
 \end{equation}
 
-\textbf{Maybe put in the derivation, and again why this is beneficial.}\\
-
-Along with taking $\epsilon =1$ and $\sigma =1$ in the Lennard-Jones potential, we will also take $m=1$, with the same motivation.  At the end of the calculations, we can always put the proper values back in to extract dimensionally correct quantities.  
+Along with taking $\epsilon =1$ and $\sigma =1$ in the Lennard-Jones potential, we will also take $m=1$, with the motivation that these can easily be adjusted to comply with the users' wishes, but only scales the outcome.
 
 \subsection{Thermodynamics}
 
@@ -248,7 +254,7 @@ It is, therefore, much better to run one simulation and average over many blocks
 \noindent and the error is calculated from 
 
 \begin{equation}
-E = \frac{1}{\sqrt{N}}\sum \limits _{i=1}^N (\bar{C} - C_{i})
+E = \frac{1}{\sqrt{N}}\sum \limits _{i=1}^N (C_i - \bar{C})^2
 \end{equation}
 
 \noindent where $E$ is the error on a given quantity, $N$ is the number of time-step blocks, and $C_i$ is the quantity value for each time step block.  \textbf{I'm not sure if this equation is actually correct.}\\
@@ -258,7 +264,7 @@ This ensures that we include fluctuations in the numbers that we report, as well
 
 \end{multicols}
 
-\bibliography{MolDynBib}
+\bibliography{MolDynBib.bib}
 
 %\begin{thebibliography}{99}
 
