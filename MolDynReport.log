@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.1)  26 FEB 2015 23:52
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.1)  27 FEB 2015 17:30
 entering extended mode
 **C:/Users/Amy/Documents/GitHub/molecular_dynamics/MolDynReport.tex
 (C:/Users/Amy/Documents/GitHub/molecular_dynamics/MolDynReport.tex
@@ -347,69 +347,88 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
+<plots/crystal_structure.png, id=1, 158.84344pt x 122.70844pt>
+File: plots/crystal_structure.png Graphic file (type png)
 
-LaTeX Warning: Reference `' on page 1 undefined on input line 40.
+<use plots/crystal_structure.png>
+Package pdftex.def Info: plots/crystal_structure.png used on input line 46.
+(pdftex.def)             Requested size: 149.41896pt x 115.43768pt.
 
+<plots/fcc_crystal.png, id=3, 274.77657pt x 179.16937pt>
+File: plots/fcc_crystal.png Graphic file (type png)
 
-LaTeX Warning: Reference `' on page 1 undefined on input line 40.
+<use plots/fcc_crystal.png>
+Package pdftex.def Info: plots/fcc_crystal.png used on input line 55.
+(pdftex.def)             Requested size: 103.44417pt x 67.45079pt.
 
+<plots/hcp_crystal.png, id=4, 268.75406pt x 174.6525pt>
+File: plots/hcp_crystal.png Graphic file (type png)
 
-LaTeX Warning: Reference `' on page 1 undefined on input line 40.
+<use plots/hcp_crystal.png>
+Package pdftex.def Info: plots/hcp_crystal.png used on input line 55.
+(pdftex.def)             Requested size: 103.44417pt x 67.22409pt.
 
-<plots/VLJ.pdf, id=1, 361.35pt x 207.77625pt>
-File: plots/VLJ.pdf Graphic file (type pdf)
- <use plots/VLJ.pdf>
-Package pdftex.def Info: plots/VLJ.pdf used on input line 55.
-(pdftex.def)             Requested size: 229.8775pt x 132.18056pt.
- [1
+Overfull \hbox (1.01083pt too wide) in paragraph at lines 54--57
+ [] 
+ []
+
+[1
 
 {C:/Users/Amy/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Amy/
-Documents/GitHub/molecular_dynamics/plots/VLJ.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Documents/GitHub/molecular_dynamics/plots/crystal_structure.png> <C:/Users/Amy/
+Documents/GitHub/molecular_dynamics/plots/fcc_crystal.png> <C:/Users/Amy/Docume
+nts/GitHub/molecular_dynamics/plots/hcp_crystal.png>]
+<plots/VLJ.pdf, id=17, 361.35pt x 207.77625pt>
+File: plots/VLJ.pdf Graphic file (type pdf)
+ <use plots/VLJ.pdf>
+Package pdftex.def Info: plots/VLJ.pdf used on input line 75.
+(pdftex.def)             Requested size: 229.8775pt x 132.18056pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
 
-LaTeX Warning: Reference `verlet' on page 2 undefined on input line 98.
+LaTeX Warning: Reference `verlet' on page 2 undefined on input line 118.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+[2 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/VLJ.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
-
- []
-
-
-LaTeX Warning: Reference `' on page 3 undefined on input line 231.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
 [3]
 
-Package caption Warning: \label without proper \caption on input line 246.
+LaTeX Warning: Reference `' on page 4 undefined on input line 249.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+
+ []
+
+
+Package caption Warning: \label without proper \caption on input line 264.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `temptable' on page 4 undefined on input line 237.
+LaTeX Warning: Reference `temptable' on page 4 undefined on input line 255.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
 
  []
 
@@ -418,61 +437,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 237--238
 pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
 mics/plots/correlationfunctionT05rho12x.pdf): PDF inclusion: found PDF version 
 <1.6>, but at most version <1.5> allowed
-<plots/correlationfunctionT05rho12x.pdf, id=38, 815.045pt x 614.295pt>
+<plots/correlationfunctionT05rho12x.pdf, id=45, 815.045pt x 614.295pt>
 File: plots/correlationfunctionT05rho12x.pdf Graphic file (type pdf)
 
 <use plots/correlationfunctionT05rho12x.pdf>
 Package pdftex.def Info: plots/correlationfunctionT05rho12x.pdf used on input l
-ine 259.
+ine 277.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
 
 
 pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
 mics/plots/corfunct1rho08n864lp500.pdf): PDF inclusion: found PDF version <1.6>
 , but at most version <1.5> allowed
-<plots/corfunct1rho08n864lp500.pdf, id=39, 815.045pt x 614.295pt>
+<plots/corfunct1rho08n864lp500.pdf, id=46, 815.045pt x 614.295pt>
 File: plots/corfunct1rho08n864lp500.pdf Graphic file (type pdf)
 
 <use plots/corfunct1rho08n864lp500.pdf>
 Package pdftex.def Info: plots/corfunct1rho08n864lp500.pdf used on input line 2
-67.
+85.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
-
+ [4]
 
 pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
 mics/plots/correlationfunctionT3Rho03x.pdf): PDF inclusion: found PDF version <
 1.6>, but at most version <1.5> allowed
-<plots/correlationfunctionT3Rho03x.pdf, id=40, 815.045pt x 614.295pt>
+<plots/correlationfunctionT3Rho03x.pdf, id=50, 815.045pt x 614.295pt>
 File: plots/correlationfunctionT3Rho03x.pdf Graphic file (type pdf)
 
 <use plots/correlationfunctionT3Rho03x.pdf>
 Package pdftex.def Info: plots/correlationfunctionT3Rho03x.pdf used on input li
-ne 275.
+ne 293.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
- [4 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/correlationfunction
-T05rho12x.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/corfunct
-1rho08n864lp500.pdf>]
-
-LaTeX Warning: Citation `thijssen' on page 5 undefined on input line 294.
 
 
-LaTeX Warning: Citation `thijssen' on page 5 undefined on input line 294.
+LaTeX Warning: Citation `thijssen' on page 5 undefined on input line 312.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--299
+LaTeX Warning: Citation `thijssen' on page 5 undefined on input line 312.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
 
  []
 
 
-LaTeX Warning: Citation `thijssen' on page 5 undefined on input line 305.
+LaTeX Warning: Citation `thijssen' on page 5 undefined on input line 323.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
+[5 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/correlationfunctionT
+05rho12x.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/corfunct1
+rho08n864lp500.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/cor
+relationfunctionT3Rho03x.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
@@ -481,38 +501,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 313--314
 pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
 mics/plots/presn100lp10000T1rho088prt864.pdf): PDF inclusion: found PDF version
  <1.6>, but at most version <1.5> allowed
-<plots/presn100lp10000T1rho088prt864.pdf, id=50, 815.045pt x 614.295pt>
+<plots/presn100lp10000T1rho088prt864.pdf, id=63, 815.045pt x 614.295pt>
 File: plots/presn100lp10000T1rho088prt864.pdf Graphic file (type pdf)
 
 <use plots/presn100lp10000T1rho088prt864.pdf>
 Package pdftex.def Info: plots/presn100lp10000T1rho088prt864.pdf used on input 
-line 317.
+line 335.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
- [5 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/correlationfunction
-T3Rho03x.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
 
  []
 
+[6 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/presn100lp10000T1rho
+088prt864.pdf>]
 (C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [6 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/presn100lp10000T1r
-ho088prt864.pdf>]
-(C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.aux)
+) [7] (C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5024 strings out of 493921
- 73522 string characters out of 3144882
- 147782 words of memory out of 3000000
- 8267 multiletter control sequences out of 15000+200000
+ 5042 strings out of 493921
+ 73925 string characters out of 3144882
+ 147798 words of memory out of 3000000
+ 8281 multiletter control sequences out of 15000+200000
  12122 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,19n,38p,867b,454s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,19n,38p,867b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
@@ -525,9 +544,9 @@ es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on MolDynReport.pdf (6 pages, 528275 bytes).
+Output written on MolDynReport.pdf (7 pages, 554565 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 112 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

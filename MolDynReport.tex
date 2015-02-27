@@ -28,16 +28,36 @@
 
 \section{Introduction}
 
-There is an increasing demand for knowledge on the dynamic properties of physcial systems. Where other methods such as MonteCarlo methods are useful to find static properties of such systems, Molecular Dynamics (MD) can be used to research the dynamis of such systems. MD is based on the equations of motion. For this reason MD allows us to track down the position and momentum of each particle at each moment in time. Hence besides static properties, MD can be used to research how particles effect eachother in multiple particle systems, which gives insight in the dynamics of such systems \cite{thijssen}. MD is applied in many fields, for example in biological physics in the study of macromolecules \cite{deGroot} \\
+There is an increasing demand for knowledge on the dynamic properties of physical systems. Where other methods such as Monte Carlo methods are useful to find static properties of such systems, Molecular Dynamics (MD) can be used to research the dynamics of such systems. MD is based on the equations of motion. For this reason MD allows us to track down the position and momentum of each particle at each moment in time. Hence besides static properties, MD can be used to research how particles effect each other in multiple particle systems, which gives insight in the dynamics of such systems \cite{thijssen}. MD is applied in many fields, for example in biological physics in the study of macromolecules \cite{deGroot} \\
 
 This report is broken into the following sections.  In Section \ref{theory}, we will briefly discuss the theory behind the calculations in this report.  Section \ref{disc} presents the results of our calculations, including a thermostat, correlation functions for the three states of matter, and pressure calculations.  We will then give a brief conclusion in section \ref{conc}.  An appendix is found at the end of this report to discuss the method used for error analysis.  
 
 \section{Theory}
 \label{theory}
 
+In the following sections, we will give an overview of the concepts and equations that will be needed to build a molecular dynamics simulation of argon.
+
 \subsection{Crystalline Array}
 
-The lattice structure of argon is face-centered cubic (fcc).  The unit cell in an fcc crystal contains four atoms in the shape of a triangular pyramid, Figure \ref{}.  In the fcc lattice, the sheets of atoms stack on top of each other in such as way that every other layer is off-set by half of an atomic radius, Figure \ref{}, left.  (This is in contrast to a hpc lattice where every other sheet of atoms lines up, Figure \ref{}, right.)  We use the fcc configuration for our simulation because the equilibrium state of argon is an fcc lattice.  
+The lattice structure of argon is face-centered cubic (fcc).  The unit cell in an fcc crystal contains four atoms in the shape of a triangular pyramid, Figure \ref{unitcell}.  In the fcc lattice, the sheets of atoms stack on top of each other in such as way that every other layer is off-set by half of an atomic radius, Figure \ref{fcc}, left.  (This is in contrast to a hpc lattice where every other sheet of atoms lines up, Figure \ref{fcc}, right.)  We use the fcc configuration for the initial conditions of our simulation because the equilibrium state of argon is an fcc lattice.  
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.65\linewidth]{plots/crystal_structure.png}
+\caption{Unit cell of a face-central cubic (fcc) crystal.  The entire crystal can then be built up through these unit cells.}
+\label{unitcell}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\begin{tabular}{ c c }
+\includegraphics[width=0.45\linewidth]{plots/fcc_crystal.png} & \includegraphics[width=0.45\linewidth]{plots/hcp_crystal.png}
+\end{tabular}
+\caption{Left, structure of an fcc crystal.  Right, structure of an hcp crystal.  In the fcc crystal, layers A and C are off-set by the radius of one of the particles in the lattice (represented by the blue and white circles).  In contrast, in the hpc structure, layers A and C directly overlap.}
+\label{fcc}
+\end{center}
+\end{figure}
 
 \subsection{Interaction}
 
@@ -71,9 +91,9 @@ From the expression for the Lennard-Jones potential, (\ref{LJpot}), we immediate
 
 \begin{equation}
 \begin{split}
-F_x = 24\epsilon x \\
-F_y = 24 \epsilon y\\
-F_z = 24 \epsilon z \\
+F_x = 24\epsilon x \left [ \frac{2 \sigma ^{12}}{r^{14}} - \frac{\sigma ^{6}}{r^8} \right ] \\
+F_y = 24 \epsilon y \left [ \frac{2 \sigma ^{12}}{r^{14}} - \frac{\sigma ^{6}}{r^8} \right ] \\
+F_z = 24 \epsilon z \left [ \frac{2 \sigma ^{12}}{r^{14}} - \frac{\sigma ^{6}}{r^8} \right ] \\
 \end{split}
 \end{equation}
 
@@ -108,8 +128,6 @@ F_{i+1}=-\frac{1}{m} \frac{\partial V_{LJ}(r_i)}{\partial r} \\
 p_{i+1} = p_{i+\frac{1}{2}} + \frac{F_{i+1}}{2} \Delta t \\
 \end{split}
 \end{equation}
-
-Along with taking $\epsilon =1$ and $\sigma =1$ in the Lennard-Jones potential, we will also take $m=1$, with the motivation that these can easily be adjusted to comply with the users' wishes, but only scales the outcome.
 
 \subsection{Thermodynamics}
 \label{thermo}
