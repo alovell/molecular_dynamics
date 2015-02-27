@@ -224,7 +224,7 @@ In the following subsections, we present the results of our simulation.
 
 \subsection{Initial Conditions}
 
-We started with our system in a fcc crystalline configuration (recall Figure \textbf{fig}).  Our simulation modeled  108 (\textbf{probably more at the end of the project}) argon atoms with a unit cell length of \textbf{2 fm}.  The boundary conditions of our system were periodic; every time a particle crossed outside of the box by a distance $b$, is was taken to be at a position $L-b$ inside of the box (where the length of the box is $L$).  This simulates a particle moving continuously, regardless of box size.  As mentioned previously, we will take $\sigma=\epsilon=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
+We started with our system in a fcc crystalline configuration (recall Figure \textbf{fig}).  Our simulation modeled  108 (\textbf{probably more at the end of the project}) argon atoms with a unit cell length of \textbf{2 fm}.  The boundary conditions of our system were periodic; every time a particle crossed outside of the box by a distance $b$, is was taken to be at a position $L-b$ inside of the box (where the length of the box is $L$).  This simulates a particle moving continuously, regardless of box size.  The cut-off distance where the particles were taken to be non-interacting was $r_c = 3.2$.  As mentioned previously, we will take $\sigma=\epsilon=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
 
 \subsection{Energy Conservation}
 
@@ -312,7 +312,15 @@ Further work can still be done.  There are other interesting thermodynamical qua
 
 Like experimental measurements, numerical calculations should also include error bars.  There are many ways that these uncertainties can be calculated, but in this paper, we will be using \textbf{name of method - or some description}.  Just as in an experiment where we would ideally take many measurements and calculate an error based on their standard deviations from the mean, we can use the same concept to put error bars on our calculated values.  There are several ways that we can do this.  Perhaps, the most obvious one is to run the calculation several times to generate a mean and a standard deviation.  However, this process is lengthy and can be heavily dependent on the seed of the random number generator used in initializing positions and velocities the particles.  \\
 
-It is, therefore, much better to run one simulation and average over many blocks of time.  In each simulation, after a long enough period of time, the quantity of interests will settle on some mean value with every time step oscillating around this value, as show in Figure \textbf{plot of total energy or something like that which shows the oscillations from the mean and the cuts defining each time step block}.  While each value depends on the previous value, averaging over a large enough number of time steps will produce a value independent of the previous block of time steps.  For each of these blocks, say 1500 (\textbf{put in actual number that we used}) time steps, an average is calculated (this is equivalent to having many measurements from an experiment), and then from each of these "measurements", we can calculate an average value for our simulation and an error for that value.  The average value is defined as 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\linewidth]{plots/presn100lp10000T1rho088prt864.pdf}
+\caption{Top, pressure calculated for every time step.  Bottom, pressure averaged over every 100 time steps in the top plot.  }
+\label{errex}
+\end{center}
+\end{figure}
+
+It is, therefore, much better to run one simulation and average over many blocks of time.  In each simulation, after a long enough period of time, the quantity of interests will settle on some mean value with every time step oscillating around this value, as show in Figure \ref{errex}.  While each value depends on the previous value, averaging over a large enough number of time steps will produce a value independent of the previous block of time steps.  For each of these blocks, 100 time steps, an average is calculated (this is equivalent to having many measurements from an experiment), and then from each of these "measurements", we can calculate an average value for our simulation and an error for that value.  The average value is defined as 
 
 \begin{equation}
 \bar{C} = \frac{1}{N}\sum \limits _{i=1}^N C_i 
