@@ -9,7 +9,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
-\usepackage{multicol,caption}
+\usepackage{multicol,caption,listings}
 \usepackage{cite}
 
 \bibliographystyle{plain}
@@ -52,7 +52,7 @@ V_{LJ}(r) = 4 \epsilon \left [ \left (\frac{\sigma}{r} \right )^{12} - \left (\f
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=\linewidth]{VLJ.pdf}
+\includegraphics[width=\linewidth]{plots/VLJ.pdf}
 \caption{The shape of the Lennard-Jones potential.  Here, $\sigma=1$ (where the potential crosses the r-axis) and $\epsilon =1$ (the depth of the interaction).}
 \label{VLJfig}
 \end{center}
@@ -112,6 +112,7 @@ p_{i+1} = p_{i+\frac{1}{2}} + \frac{F_{i+1}}{2} \Delta t \\
 Along with taking $\epsilon =1$ and $\sigma =1$ in the Lennard-Jones potential, we will also take $m=1$, with the motivation that these can easily be adjusted to comply with the users' wishes, but only scales the outcome.
 
 \subsection{Thermodynamics}
+\label{thermo}
 
 Along with updating the position an momentum of each particle to see how the system equilibrates, there are also several thermodynamic quantities that we can calculate in order to learn more about the system we have created.  Before calculating any quantities, we want to model our system as being in contact with a thermostat to keep it at a constant temperature.  We do this by renormalizing the velocity.  \\
 
@@ -223,31 +224,87 @@ In the following subsections, we present the results of our simulation.
 
 \subsection{Initial Conditions}
 
-We started with our system in a \textbf{crystal name} crystalline configuration (recall Figure \textbf{fig}).  Our simulation modeled  108 (\textbf{probably more at the end of the project}) argon atoms with a unit cell length of \textbf{2 fm}.  As mentioned above, we will take $\sigma=\epsilon=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
+We started with our system in a fcc crystalline configuration (recall Figure \textbf{fig}).  Our simulation modeled  108 (\textbf{probably more at the end of the project}) argon atoms with a unit cell length of \textbf{2 fm}.  The boundary conditions of our system were periodic; every time a particle crossed outside of the box by a distance $b$, is was taken to be at a position $L-b$ inside of the box (where the length of the box is $L$).  This simulates a particle moving continuously, regardless of box size.  As mentioned previously, we will take $\sigma=\epsilon=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
+
+\subsection{Energy Conservation}
+
+To test that our simulation was working correctly, we first calculated the total energy of the system, which should be constant over each time step.  One such example is found in Figure \ref{} (\textbf{figure of conservation of energy}).  This exercise helped us find a reasonable time step and range of temperatures.  With too large of a time step, the particles could be moved into the highly repulsive region of another's potential, which is clearly unphysical.  The particle is essentially moving too fast to respond to the potentials of the other particles around it.  On the other hand, a time step that is too small can cause a time-intensive computation and provide a level of detail that is not beneficial to this type of simulation.  \\
+
+Temperature is another variable that must be keep in a reasonable range.  Because, we have taken $k_B =1$, energy and temperature are measured with the same units.  If we take this to be electron volts, the conversion factor is $1 $ eV $\approx 11600$ K.  Thus, as temperature increases, we quickly enter a realm where the particles are traveling at relativistic speeds.  Our simulation is purely classical and thus not equipped to accurately calculate relativistic simulations.
 
 \subsection{Thermostat}
 
-Give a target temperature of each thermostat (whatever's used below) and an error on it.  Also include a plot or two of the temperature over time to see how quickly the system reaches the target temperature - based on how often the velocity is renormalized.
+Using the renormalization method explained in Section \ref{thermo}, we were able to bring our system to any given target temperature (non-relativistic) from any starting temperature.  Some of these target temperatures that are used in the following calculations are given in Table \ref{temptable}.  \\
+
+\begin{table*}
+\begin{center}
+\begin{tabular}{| c | c |}
+\hline $T$ & $\sigma_T$ \\ \hline
+ &  \\ \hline
+ &  \\ \hline
+\end{tabular}
+\label{temptable}
+\caption{Temperatures, $T$, and their uncertainties $\sigma$, given at $T \pm \sigma$, used throughout the remainder of the calculations.}
+\end{center}
+\end{table*}
+
+Based on how often the velocity was renormalized, the temperature could be brought more slowly or quickly to the target temperature.  \textbf{include plots - every step, every 10 steps, every 100 steps, and maybe a little more discussion on this point.}
 
 \subsection{Correlation Function}
 
-One for each of the three states of matter - can either keep the same density and run the calculation for different temperatures or take one temperature and see if we can find different densities at which each state of matter exists.  Both are probably interesting.
+Once a thermostat was be established, correlation functions could be calculated.  As mentioned earlier, these give us a sense of what state of matter our system is in for different combinations of temperatures and densities.  At a low temperature and relatively high density, we confirmed that our system had properties of a solid (Figure \ref{corsolid}), at intermediate temperatures and densities, our system had properties of a liquid (Figure \ref{corliquid}), and at a high temperature and low density, our system displayed properties of a gas (Figure \ref{corgas}).  
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\linewidth]{plots/correlationfunctionT05rho12x.pdf}
+\caption{Correlation function for a solid at $T=0.5$ and $\rho=1.2$.  This periodic structure is what we would expect from a solid.}
+\label{corsolid}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\linewidth]{plots/corfunct1rho08n864lp500.pdf}
+\caption{Correlation function for a liquid at $T=1$ and $\rho=0.5$.  We can see from Figures \ref{corsolid} and \ref{corgas} that this phase is in between the other two, as a liquid is considered to be in between a solid and a gas.}
+\label{corliquid}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\linewidth]{plots/correlationfunctionT3Rho03x.pdf}
+\caption{Correlation function for a gas at $T=3$ and $\rho = 0.3$.  The exponential decay is the shape that we would expect.}
+\label{corgas}
+\end{center}
+\end{figure}
+
+\textbf{One for each of the three states of matter - can either keep the same density and run the calculation for different temperatures or take one temperature and see if we can find different densities at which each state of matter exists.  Both are probably interesting.}
 
 \subsection{Pressure}
 
-Find the pressure of different systems under different conditions - temperature and density.  Make sure to include errors on each number.
-
-\begin{tabular}{ l | c | c | c | r }
-  System paramters & $p$ & $\sigma_{pressure}$ & $\sigma_{pressureblock}$ & $\frac{\sigma_{pressureblock}}{\sqrt n}$ \\
-  $T$ = 3, $\rho$ = 0.5 & 5.4862 & 0.0836 & 0.0089 & 0.0010 \\
-  $T$ = 1, $\rho$ = 0.88 & 2.6982 & 0.0171 & 0.0067 & 0.0008 \\
-  $T$ = 0.5, $\rho$ = 1.2 & 1.1105 & 0.0056 & 0.0021 & 0.0002 \\
+\begin{table*}
+\begin{center}
+\begin{tabular}{| l | c | c | c | c | r |}
+\hline  $T$ & $\rho$ & $P$ & $\sigma_{pressure}$ & $\sigma_{pressureblock}$ & $\sigma_{pressureblock}/ \sqrt n$ \\ \hline
+  3 & 0.5 & 5.4862 & 0.0836 & 0.0089 & 0.0010 \\ \hline
+  1 & 0.88 & 2.6982 & 0.0171 & 0.0067 & 0.0008 \\ \hline
+  0.5 & 1.2 & 1.1105 & 0.0056 & 0.0021 & 0.0002 \\ \hline
 \end{tabular}
+\label{pressuretab}
+\caption{Pressure of a gas, solid, and liquid (top to bottom), at a given temperature $T$ and density $\rho$.  $\sigma$ gives the standard deviation of each calculation.  \textbf{Explain the difference between each of the sigma values.}  Numbers can be compared to \cite{thijssen}.}
+\end{center}
+\end{table*}
 
-\textbf{sorry for the ugly indent, but these are the numbers we can work with. We should add that are results lie close to those obtained by the method Jos has used. He finds for T = 1, rho = 0.88 a value of 2.98 for p/rho. If we divide our p by rho, we get: 3.07. Sadly enough it is not exactly the same, but ok. sorry i couldn't write this nicely, i'm a bit to tired.}
+\textbf{sorry for the ugly indent, but these are the numbers we can work with. We should add that are results lie close to those obtained by the method Jos has used. He finds for T = 1, rho = 0.88 a value of 2.98 for p/rho. If we divide our p by rho, we get: 3.07. Sadly enough it is not exactly the same, but ok. sorry i couldn't write this nicely, i'm a bit to tired.}\\
+
+\textbf{This (above) should go into the report when talking about the pressure calculations.}
 
 \section{Conclusion}
 \label{conc}
+
+In conclusion, we successfully ran a molecular dynamics simulation of 108 argon atoms.  Beginning in an fcc crystalline lattice with periodic boundary conditions, we simulated contact with thermostats of \textbf{put in relevant $T\pm \sigma$ here}.  From there, we calculated calculated properties of a gas at $T=3$, $\rho=0.3$ with $P=$, a liquid at $T=1$, $\rho =0.8$ with $P=$, and a solid with $T=0.5$, $\rho=1.2$ at $P=$.  With the exception of some of the pressure values, our current calculations agree with those of \cite{thijssen} under similar conditions.  \\
+
+Further work can still be done.  There are other interesting thermodynamical quantities that can be calculated for this system, namely the specific heat \textbf{where there others?}.  It would also be interesting to change the initial conditions of the system.  Instead of periodic boundary conditions, put the system in a physical box and see how the interactions with the wall change the observables.  Also, a different crystalline structure (such as hpc) could be used as the initial configuration.  This would allow us to see whether the system did rearrange itself into the true fcc ground state of argon.  Even with all of these possibilities, we provided a realistic molecular dynamics simulation of argon.  
 
 \appendix 
 
