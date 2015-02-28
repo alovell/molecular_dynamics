@@ -39,7 +39,7 @@ In the following sections, we will give an overview of the concepts and equation
 
 \subsection{Crystalline Array}
 
-The lattice structure of argon is face-centered cubic (fcc).  The unit cell in an fcc crystal contains four atoms in the shape of a triangular pyramid, Figure \ref{unitcell}.  In the fcc lattice, the sheets of atoms stack on top of each other in such as way that every other layer is off-set by half of an atomic radius, Figure \ref{fcc}, left.  (This is in contrast to a hpc lattice where every other sheet of atoms lines up, Figure \ref{fcc}, right.)  We use the fcc configuration for the initial conditions of our simulation because the equilibrium state of argon is an fcc lattice.  
+The lattice structure of argon is face-centered cubic (fcc).  The unit cell in an fcc crystal contains four atoms in the shape of a triangular pyramid, Figure \ref{unitcell}.  In the fcc lattice, the sheets of atoms stack on top of each other in such as way that every other layer is off-set by half of an atomic radius, Figure \ref{fcc}, left.  (This is in contrast to a hcp - hexagonal close packed - lattice where every other sheet of atoms lines up, Figure \ref{fcc}, right.)  \cite{crystal}  We use the fcc configuration for the initial conditions of our simulation because the equilibrium state of argon is an fcc lattice.  
 
 \begin{figure}[H]
 \begin{center}
@@ -54,14 +54,14 @@ The lattice structure of argon is face-centered cubic (fcc).  The unit cell in a
 \begin{tabular}{ c c }
 \includegraphics[width=0.45\linewidth]{plots/fcc_crystal.png} & \includegraphics[width=0.45\linewidth]{plots/hcp_crystal.png}
 \end{tabular}
-\caption{Left, structure of an fcc crystal.  Right, structure of an hcp crystal.  In the fcc crystal, layers A and C are off-set by the radius of one of the particles in the lattice (represented by the blue and white circles).  In contrast, in the hpc structure, layers A and C directly overlap.}
+\caption{Left, structure of an fcc crystal.  Right, structure of an hcp crystal.  In the fcc crystal, layers A and C are off-set by the radius of one of the particles in the lattice (represented by the blue and white circles).  A fourth layer on top of A would line up again with layer C.  In contrast, in the hcp structure, layers A and C directly overlap.}
 \label{fcc}
 \end{center}
 \end{figure}
 
 \subsection{Interaction}
 
-To describe the interaction between each of the argon atoms, we use the Lennard-Jones potential, which accounts for the short-range repulsive force between the two atoms due to Coulomb repulsion and the longer-range attractive forces from dipole-dipole and dipole-induced dipole forces.  The form of the potential is as follows:
+To describe the interaction between each of the argon atoms, we use the Lennard-Jones potential \cite{verlet}, which accounts for the short-range repulsive force between the two atoms due to Coulomb repulsion and the longer-range attractive forces from dipole-dipole and dipole-induced dipole forces.  The form of the potential is as follows:
 
 \begin{equation}
 \label{LJpot}
@@ -242,7 +242,7 @@ In the following subsections, we present the results of our simulation.
 
 \subsection{Initial Conditions}
 
-We started with our system in a fcc crystalline configuration (recall Figure \textbf{fig}).  Our simulation modeled  108 (\textbf{probably more at the end of the project}) argon atoms with a unit cell length of \textbf{2 fm}.  The boundary conditions of our system were periodic; every time a particle crossed outside of the box by a distance $b$, is was taken to be at a position $L-b$ inside of the box (where the length of the box is $L$).  This simulates a particle moving continuously, regardless of box size.  The cut-off distance where the particles were taken to be non-interacting was $r_c = 3.2$.  As mentioned previously, we will take $\sigma=\epsilon=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
+We started with our system in a face-central cubic crystalline configuration (recall Figure \ref{fcc} left).  Our simulation modeled  108 (\textbf{probably more at the end of the project}) argon atoms with a unit cell length of \textbf{2 fm}.  The boundary conditions of our system were periodic; every time a particle crossed outside of the box by a distance $b$, is was taken to be at a position $L-b$ inside of the box (where the length of the box is $L$).  This simulates a particle moving continuously, regardless of box size.  The cut-off distance where the particles were taken to be non-interacting was $r_c = 3.2$.  As mentioned previously, we will take $\sigma=\epsilon=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
 
 \subsection{Energy Conservation}
 
@@ -300,6 +300,8 @@ Once a thermostat was be established, correlation functions could be calculated.
 
 \subsection{Pressure}
 
+Table \ref{pressuretab}
+
 \begin{table*}
 \begin{center}
 \begin{tabular}{| l | c | c | c | c | r |}
@@ -350,14 +352,14 @@ It is, therefore, much better to run one simulation and average over many blocks
 E = \frac{1}{\sqrt{N}}\sum \limits _{i=1}^N (C_i - \bar{C})^2
 \end{equation}
 
-\noindent where $E$ is the error on a given quantity, $N$ is the number of time-step blocks, and $C_i$ is the quantity value for each time step block.  \textbf{I'm not sure if this equation is actually correct.}\\
+\noindent where $E$ is the error on a given quantity, $N$ is the number of time-step blocks, and $C_i$ is the quantity value for each time step block.\\
 
 This ensures that we include fluctuations in the numbers that we report, as well as account for a decreasing error with an increasing number of "measurements".  
 
 
 \end{multicols}
 
-\bibliography{MolDynBib.bib}
+\bibliography{MolDynBib}
 
 %\begin{thebibliography}{99}
 

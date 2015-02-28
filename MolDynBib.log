@@ -1,0 +1,22 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdftex 2015.2.27)  27 FEB 2015 17:41
+entering extended mode
+**C:/Users/Amy/Documents/GitHub/molecular_dynamics/MolDynBib.bib
+(C:/Users/Amy/Documents/GitHub/molecular_dynamics/MolDynBib.bib
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.5   url = {http://www3.mpibpc.mpg.de/groups/de_
+                                                 groot/}
+? 
+! Emergency stop.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.5   url = {http://www3.mpibpc.mpg.de/groups/de_
+                                                 groot/}
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!
