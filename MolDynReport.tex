@@ -20,9 +20,7 @@
 \author{P. Hansler, D. Kuitenbrouwer, and A. Lovell}
 \maketitle
 
-\begin{center}
-\textbf{Abstract}  Write the abstract here - what the project is and what we are going to show.  \\
-\end{center}
+\noindent \textbf{Abstract}  Molecular dynamics simulations are useful in a wide variety of fields from thermodynamics to biophysics to macromolecular study.  In the 1960s, Loup Verlet performed molecular dynamics calculations on argon molecules within a Lennard-Jones potential to study their thermodynamical quantities.  In this work, we will describe the underlying structure of our own molecular dynamics simulation of argon as well as the resulting temperature, pressure, and correlation function calculations.  These will be used to investigate properties of our system and compared to previous results.  \\
 
 \begin{multicols}{2}
 
@@ -41,8 +39,6 @@ In the following sections, we will give an overview of the concepts and equation
 
 \subsection{Crystalline Array}
 
-The lattice structure of argon is face-centered cubic (fcc).  The unit cell in an fcc crystal contains four atoms in the shape of a triangular pyramid, Figure \ref{unitcell}.  In the fcc lattice, the sheets of atoms stack on top of each other in such as way that every other layer is off-set by half of an atomic radius, Figure \ref{fcc}, left.  (This is in contrast to a hpc lattice where every other sheet of atoms lines up, Figure \ref{fcc}, right.)  We use the fcc configuration for the initial conditions of our simulation because the equilibrium state of argon is an fcc lattice.  
-
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.65\linewidth]{plots/crystal_structure.png}
@@ -51,19 +47,21 @@ The lattice structure of argon is face-centered cubic (fcc).  The unit cell in a
 \end{center}
 \end{figure}
 
+The lattice structure of argon is face-centered cubic (fcc).  The unit cell in an fcc crystal contains four atoms in the shape of a triangular pyramid, Figure \ref{unitcell}.  In the fcc lattice, the sheets of atoms stack on top of each other in such as way that every other layer is off-set by half of an atomic radius, Figure \ref{fcc}, left.  (This is in contrast to a hcp - hexagonal close packed - lattice where every other sheet of atoms lines up, Figure \ref{fcc}, right.)  \cite{crystal}  We use the fcc configuration for the initial conditions of our simulation because the equilibrium state of argon is an fcc lattice.  
+
 \begin{figure}[H]
 \begin{center}
 \begin{tabular}{ c c }
 \includegraphics[width=0.45\linewidth]{plots/fcc_crystal.png} & \includegraphics[width=0.45\linewidth]{plots/hcp_crystal.png}
 \end{tabular}
-\caption{Left, structure of an fcc crystal.  Right, structure of an hcp crystal.  In the fcc crystal, layers A and C are off-set by the radius of one of the particles in the lattice (represented by the blue and white circles).  In contrast, in the hpc structure, layers A and C directly overlap.}
+\caption{Left, structure of an fcc crystal.  Right, structure of an hcp crystal.  In the fcc crystal, layers A and C are off-set by the radius of one of the particles in the lattice (represented by the blue and white circles).  A fourth layer on top of A would line up again with layer C.  In contrast, in the hpc structure, layers A and C directly overlap.}
 \label{fcc}
 \end{center}
 \end{figure}
 
 \subsection{Interaction}
 
-To describe the interaction between each of the argon atoms, we use the Lennard-Jones potential, which accounts for the short-range repulsive force between the two atoms due to Coulomb repulsion and the longer-range attractive forces from dipole-dipole and dipole-induced dipole forces.  The form of the potential is as follows:
+To describe the interaction between each of the argon atoms, we use the Lennard-Jones potential \cite{verlet}, which accounts for the short-range repulsive force between the two atoms due to Coulomb repulsion and the longer-range attractive forces from dipole-dipole and dipole-induced dipole forces.  The form of the potential is as follows:
 
 \begin{equation}
 \label{LJpot}
@@ -244,32 +242,48 @@ In the following subsections, we present the results of our simulation.
 
 \subsection{Initial Conditions}
 
-We started with our system in a fcc crystalline configuration (recall Figure \textbf{fig}).  Our simulation modeled  108 (\textbf{probably more at the end of the project}) argon atoms with a unit cell length of \textbf{2 fm}.  The boundary conditions of our system were periodic; every time a particle crossed outside of the box by a distance $b$, is was taken to be at a position $L-b$ inside of the box (where the length of the box is $L$).  This simulates a particle moving continuously, regardless of box size.  The cut-off distance where the particles were taken to be non-interacting was $r_c = 3.2$.  As mentioned previously, we will take $\sigma=\epsilon=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
+We started with our system in a fcc crystalline configuration (recall Figure \ref{fcc}).  Our simulation modeled  864 argon atoms with a unit cell length of \textbf{2 fm}.  The boundary conditions of our system were periodic; every time a particle crossed outside of the box by a distance $b$, is was taken to be at a position $L-b$ inside of the box (where the length of the box is $L$).  This simulates a particle moving continuously, regardless of box size.  The cut-off distance where the particles were taken to be non-interacting was $r_c = 3.2$.  As mentioned previously, we will take $\sigma=\epsilon=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
 
 \subsection{Energy Conservation}
 
-To test that our simulation was working correctly, we first calculated the total energy of the system, which should be constant over each time step.  One such example is found in Figure \ref{} (\textbf{figure of conservation of energy}).  This exercise helped us find a reasonable time step and range of temperatures.  With too large of a time step, the particles could be moved into the highly repulsive region of another's potential, which is clearly unphysical. The particle is essentially moving too fast to respond to the potentials of the other particles around it. As a result of this, when the particle is located in this highly repulsive region, the particles will be bounced off with very high velocities which makes the energy blow up. On the other hand, a time step that is too small can cause a time-intensive computation and provide a level of detail that is not beneficial to this type of simulation.  \\
+To test that our simulation was working correctly, we first calculated the total energy of the system, which should be constant over each time step.  One such example is found in Figure \ref{engcons}.  This exercise helped us find a reasonable time step and range of temperatures.  With too large of a time step, the particles could be moved into the highly repulsive region of another's potential, which is clearly unphysical. The particle is essentially moving too fast to respond to the potentials of the other particles around it. As a result of this, when the particle is located in this highly repulsive region, the particles will be bounced off with very high velocities which makes the energy blow up. On the other hand, a time step that is too small can cause a time-intensive computation and provide a level of detail that is not beneficial to this type of simulation.  \\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\linewidth]{plots/energyT1rho088N864lpnum1000.pdf}
+\caption{Energy as a function of time step for 864 particles, with $T=1$ and $\rho = 0.88$.  The blue line is the total energy, the red line is the \textbf{WHAT} and the green line is \textbf{WHAT}.}
+\label{engcons}
+\end{center}
+\end{figure}
 
 Temperature is another variable that must be kept in a reasonable range.  Because, we have taken $k_B =1$, energy and temperature are measured with the same units.  If we take this to be electron volts, the conversion factor is $1 $ eV $\approx 11600$ K.  Thus, as temperature increases, we quickly enter a realm where the particles are traveling at relativistic speeds.  Our simulation is purely classical and thus not equipped to accurately calculate relativistic simulations.
 
 \subsection{Thermostat}
 
-Using the renormalization method explained in Section \ref{thermo}, we were able to bring our system to any given target temperature (non-relativistic) from any starting temperature.  Some of these target temperatures that are used in the following calculations are given in Table \ref{temptable}.  \\
+Using the renormalization method explained in Section \ref{thermo}, we were able to bring our system to any given target temperature (non-relativistic) from any starting temperature.  Some of these target temperatures that are used in the following calculations are given in Table 1.  \\
 
 \begin{table*}
 \begin{center}
-\begin{tabular}{| c | c |}
+\begin{tabular}{| c | c | c |}
 \hline $T$ & $\sigma_T$ & $SE_T$ \\ \hline
  0.499830 & 0.009934 & 0.000111 \\ \hline
  1.015010 & 0.018228 & 0.000203  \\ \hline
  2.975473 & 0.032667 & 0.000365 \\ \hline
 \end{tabular}
 \label{temptable}
-\caption{Temperatures, $T$, and their uncertainties $\sigma$, given at $T \pm \sigma$, used throughout the remainder of the calculations.}
+\caption{Calculated temperatures, $T$, and their uncertainties $\sigma$, given as $T \pm \sigma$, used throughout the remainder of the calculations.  $SE_T$ gives the difference between the calculated temperature ($T$) and the target temperature.}
 \end{center}
 \end{table*}
 
 Based on how often the velocity was renormalized, the temperature could be brought more slowly or quickly to the target temperature.  \textbf{include plots - every step, every 10 steps, every 100 steps, and maybe a little more discussion on this point.}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\linewidth]{plots/renormalizationshorttimerange.pdf}
+\caption{Plot of the renormalized energy (calculated with the renormalized velocity) over 250 time steps.  The green line is \textbf{What?} and the blue line is \textbf{What?}}
+\label{engrenorm}
+\end{center}
+\end{figure}
 
 \subsection{Correlation Function}
 
@@ -357,10 +371,9 @@ E = \frac{1}{\sqrt{N}}\sum \limits _{i=1}^N (C_i - \bar{C})^2
 
 This ensures that we include fluctuations in the numbers that we report, as well as account for a decreasing error with an increasing number of "measurements".  
 
-
 \end{multicols}
 
-\bibliography{MolDynBib.bib}
+\bibliography{MolDynBib}
 
 %\begin{thebibliography}{99}
 
