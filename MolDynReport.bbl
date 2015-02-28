@@ -3,6 +3,12 @@
 \bibitem{crystal}
 Crystal structures.
 
+\bibitem{Birkhoff}
+George~D. Birkhoff.
+\newblock Proof of the ergodic theorem.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  17(12):656--660, 1931.
+
 \bibitem{deGroot}
 B.~de~Groot.
 \newblock Computational biomolecular dynamics group.

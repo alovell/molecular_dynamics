@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.1)  28 FEB 2015 13:38
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.1)  28 FEB 2015 14:59
 entering extended mode
 **C:/Users/Amy/Documents/GitHub/molecular_dynamics/MolDynReport.tex
 (C:/Users/Amy/Documents/GitHub/molecular_dynamics/MolDynReport.tex
@@ -345,6 +345,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
 <plots/crystal_structure.png, id=1, 158.84344pt x 122.70844pt>
 File: plots/crystal_structure.png Graphic file (type png)
 
@@ -384,9 +389,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
-
-LaTeX Warning: Reference `verlet' on page 2 undefined on input line 118.
-
 [2 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/fcc_crystal.png> <C:
 /Users/Amy/Documents/GitHub/molecular_dynamics/plots/hcp_crystal.png> <C:/Users
 /Amy/Documents/GitHub/molecular_dynamics/plots/VLJ.pdf>]
@@ -400,17 +402,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--164
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
+
+LaTeX Warning: Command \r invalid in math mode on input line 260.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 260.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
 
  []
 
@@ -424,77 +438,101 @@ File: plots/energyT1rho088N864lpnum1000.pdf Graphic file (type pdf)
 
 <use plots/energyT1rho088N864lpnum1000.pdf>
 Package pdftex.def Info: plots/energyT1rho088N864lpnum1000.pdf used on input li
-ne 253.
+ne 268.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
+ [4]
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
 
-[4 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/energyT1rho088N864lp
-num1000.pdf>]
+
 
 pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
 mics/plots/renormalizationshorttimerange.pdf): PDF inclusion: found PDF version
  <1.6>, but at most version <1.5> allowed
-<plots/renormalizationshorttimerange.pdf, id=51, 815.045pt x 614.295pt>
+<plots/renormalizationshorttimerange.pdf, id=48, 815.045pt x 614.295pt>
 File: plots/renormalizationshorttimerange.pdf Graphic file (type pdf)
 
 <use plots/renormalizationshorttimerange.pdf>
 Package pdftex.def Info: plots/renormalizationshorttimerange.pdf used on input 
-line 282.
+line 297.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
 
 
 pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
 mics/plots/correlationfunctionT05rho12x.pdf): PDF inclusion: found PDF version 
 <1.6>, but at most version <1.5> allowed
-<plots/correlationfunctionT05rho12x.pdf, id=52, 815.045pt x 614.295pt>
+<plots/correlationfunctionT05rho12x.pdf, id=49, 815.045pt x 614.295pt>
 File: plots/correlationfunctionT05rho12x.pdf Graphic file (type pdf)
 
 <use plots/correlationfunctionT05rho12x.pdf>
 Package pdftex.def Info: plots/correlationfunctionT05rho12x.pdf used on input l
-ine 294.
+ine 309.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
 
 
 pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
 mics/plots/corfunct1rho08n864lp500.pdf): PDF inclusion: found PDF version <1.6>
 , but at most version <1.5> allowed
-<plots/corfunct1rho08n864lp500.pdf, id=53, 815.045pt x 614.295pt>
+<plots/corfunct1rho08n864lp500.pdf, id=50, 815.045pt x 614.295pt>
 File: plots/corfunct1rho08n864lp500.pdf Graphic file (type pdf)
 
 <use plots/corfunct1rho08n864lp500.pdf>
 Package pdftex.def Info: plots/corfunct1rho08n864lp500.pdf used on input line 3
-02.
+17.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
-
+ [5 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/energyT1rho088N864l
+pnum1000.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/renormali
+zationshorttimerange.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plo
+ts/correlationfunctionT05rho12x.pdf>]
 
 pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
 mics/plots/correlationfunctionT3Rho03x.pdf): PDF inclusion: found PDF version <
 1.6>, but at most version <1.5> allowed
-<plots/correlationfunctionT3Rho03x.pdf, id=54, 815.045pt x 614.295pt>
+<plots/correlationfunctionT3Rho03x.pdf, id=63, 815.045pt x 614.295pt>
 File: plots/correlationfunctionT3Rho03x.pdf Graphic file (type pdf)
 
 <use plots/correlationfunctionT3Rho03x.pdf>
 Package pdftex.def Info: plots/correlationfunctionT3Rho03x.pdf used on input li
-ne 310.
+ne 325.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
- [5 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/renormalizationshor
-ttimerange.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/correla
-tionfunctionT05rho12x.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/pl
-ots/corfunct1rho08n864lp500.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 348--349
+
+ []
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 355.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 355.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 355.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 355.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 355.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 355.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+
+ []
+
+[6 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/corfunct1rho08n864lp
+500.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/correlationfun
+ctionT3Rho03x.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--366
 
  []
 
@@ -503,50 +541,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 348--349
 pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
 mics/plots/presn100lp10000T1rho088prt864.pdf): PDF inclusion: found PDF version
  <1.6>, but at most version <1.5> allowed
-<plots/presn100lp10000T1rho088prt864.pdf, id=67, 815.045pt x 614.295pt>
+<plots/presn100lp10000T1rho088prt864.pdf, id=73, 815.045pt x 614.295pt>
 File: plots/presn100lp10000T1rho088prt864.pdf Graphic file (type pdf)
 
 <use plots/presn100lp10000T1rho088prt864.pdf>
 Package pdftex.def Info: plots/presn100lp10000T1rho088prt864.pdf used on input 
-line 352.
+line 369.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
- [6 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/correlationfunction
-T3Rho03x.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
 
  []
 
-(C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.bbl) [7 <C:/User
-s/Amy/Documents/GitHub/molecular_dynamics/plots/presn100lp10000T1rho088prt864.p
-df>] (C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.aux)
 
-LaTeX Warning: There were undefined references.
+Overfull \vbox (67.93848pt too high) has occurred while \output is active []
 
- ) 
+
+[7 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/presn100lp10000T1rho
+088prt864.pdf>]
+(C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.bbl) [8]
+(C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.aux) ) 
 Here is how much of TeX's memory you used:
  5057 strings out of 493921
- 74387 string characters out of 3144882
- 147826 words of memory out of 3000000
+ 74389 string characters out of 3144882
+ 151829 words of memory out of 3000000
  8293 multiletter control sequences out of 15000+200000
  12468 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,19n,38p,960b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on MolDynReport.pdf (7 pages, 680862 bytes).
+ 36i,19n,38p,960b,643s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmti10.pfb>
+Output written on MolDynReport.pdf (8 pages, 685345 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
+ 126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
