@@ -1,6 +1,7 @@
-# Overview file
+# Main file
 
-#import python classes
+# import python classes
+
 import numpy as np
 import random as rn
 import math
@@ -11,13 +12,15 @@ import sys
 
 
 
-#import self produced classes
+# import self produced classes
+
 import forcemodule as fm
 import init_sys
 import correlationmodule
 import pressuremodule
 
-#flags
+# flags
+
 corrflag = 2 # 2 to obtain pressure, 1 to obtain correlation function
 
 # independent parameters
@@ -25,9 +28,9 @@ dt = 0.004
 N=864
 lpnum = 10000
 cutoff = int(lpnum/5.)
-density = 0.3
+density = 1.2
 temp = 0.8
-Ttarg = 3
+Ttarg = 0.5
 Kb =  1
 nbins = 250 #number of radial shells
 n = 100 #number of timesteps per timeblock in pressure calculation
@@ -43,7 +46,7 @@ bin_vec_tot, finalbins = init_sys.init_bins(nbins,lpnum)
 toten = init_sys.init_toten(lpnum)
 prestime = init_sys.init_presvirialtime(lpnum-cutoff)
 kenarray = init_sys.init_kenarray(lpnum)
-
+potarray = init_sys.init_potarray(lpnum)
 
 # Iteration Verlet method
 # Initializing the first values for the loop
@@ -60,6 +63,7 @@ for lp in range(lpnum):
   mom = mom + forces*0.5*dt
   Ken = np.sum(mom*mom*0.5)
   kenarray[lp,:] = Ken
+  potarray[lp,:] = pot
   toten[lp,:] = Ken + pot
   if lp < (cutoff):
     if lp % 10 == 0:
@@ -76,7 +80,7 @@ for lp in range(lpnum):
 
 #pressure module
 if corrflag == 2:
-  pressuremodule.pres(lpnum,cutoff,n,prestime,toten,Ttarg,density,N)
+  pressuremodule.pres(lpnum,cutoff,n,prestime,toten,kenarray,potarray,Ttarg,density,N)
 
 # Calculate and plot correlationfunction
 if corrflag == 1:

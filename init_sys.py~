@@ -14,7 +14,7 @@ def init_pos(N,density):
 #  print npdim, 'npdim'
   l = (N/density)**(1.0/3)
   a = 0.5*l/npdim
-  print npdim, l, a
+#  print npdim, l, a
   pos = np.zeros((N,3), dtype = float)
   cnt = 0
   for k in range(npdim):
@@ -52,3 +52,7 @@ def init_presvirialtime(lpnum):
 def init_kenarray(lpnum):
   kenarray = np.zeros((lpnum,1), dtype = float)
   return kenarray
+  
+def init_kenarray(lpnum):
+  potarray = np.zeros((lpnum,1), dtype = float)
+  return potarray

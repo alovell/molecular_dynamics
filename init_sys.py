@@ -52,3 +52,7 @@ def init_presvirialtime(lpnum):
 def init_kenarray(lpnum):
   kenarray = np.zeros((lpnum,1), dtype = float)
   return kenarray
+  
+def init_potarray(lpnum):
+  potarray = np.zeros((lpnum,1), dtype = float)
+  return potarray
