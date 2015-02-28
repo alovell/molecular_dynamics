@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.1)  28 FEB 2015 15:12
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.1)  28 FEB 2015 15:45
 entering extended mode
 **C:/Users/Amy/Documents/GitHub/molecular_dynamics/MolDynReport.tex
 (C:/Users/Amy/Documents/GitHub/molecular_dynamics/MolDynReport.tex
@@ -426,6 +426,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 264--265
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+
+ []
+
+
 
 pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
 mics/plots/energyT1rho088N864lpnum1000.pdf): PDF inclusion: found PDF version <
@@ -435,10 +440,17 @@ File: plots/energyT1rho088N864lpnum1000.pdf Graphic file (type pdf)
 
 <use plots/energyT1rho088N864lpnum1000.pdf>
 Package pdftex.def Info: plots/energyT1rho088N864lpnum1000.pdf used on input li
-ne 268.
+ne 270.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
- [4]
-Underfull \hbox (badness 10000) in paragraph at lines 278--279
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 271.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 271.
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
@@ -452,7 +464,7 @@ File: plots/renormalizationshorttimerange.pdf Graphic file (type pdf)
 
 <use plots/renormalizationshorttimerange.pdf>
 Package pdftex.def Info: plots/renormalizationshorttimerange.pdf used on input 
-line 297.
+line 299.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
 
 
@@ -464,7 +476,7 @@ File: plots/correlationfunctionT05rho12x.pdf Graphic file (type pdf)
 
 <use plots/correlationfunctionT05rho12x.pdf>
 Package pdftex.def Info: plots/correlationfunctionT05rho12x.pdf used on input l
-ine 309.
+ine 311.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
 
 
@@ -476,7 +488,7 @@ File: plots/corfunct1rho08n864lp500.pdf Graphic file (type pdf)
 
 <use plots/corfunct1rho08n864lp500.pdf>
 Package pdftex.def Info: plots/corfunct1rho08n864lp500.pdf used on input line 3
-17.
+19.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
  [5 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/energyT1rho088N864l
 pnum1000.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/renormali
@@ -491,8 +503,24 @@ File: plots/correlationfunctionT3Rho03x.pdf Graphic file (type pdf)
 
 <use plots/correlationfunctionT3Rho03x.pdf>
 Package pdftex.def Info: plots/correlationfunctionT3Rho03x.pdf used on input li
-ne 325.
+ne 327.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 338.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 338.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 338.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 338.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 338.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
@@ -521,14 +549,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 355--356
 
  []
 
-[6 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/corfunct1rho08n864lp
-500.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/correlationfun
-ctionT3Rho03x.pdf>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
  []
 
-
+[6 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/corfunct1rho08n864lp
+500.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/correlationfun
+ctionT3Rho03x.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 365--366
 
  []
@@ -550,10 +578,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 387--388
 
  []
 
-
-Overfull \vbox (67.93848pt too high) has occurred while \output is active []
-
-
 [7 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/presn100lp10000T1rho
 088prt864.pdf>]
 (C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.bbl) [8]
@@ -561,7 +585,7 @@ Overfull \vbox (67.93848pt too high) has occurred while \output is active []
 Here is how much of TeX's memory you used:
  5057 strings out of 493921
  74389 string characters out of 3144882
- 151829 words of memory out of 3000000
+ 150829 words of memory out of 3000000
  8293 multiletter control sequences out of 15000+200000
  12468 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -580,7 +604,7 @@ TeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX
 ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmti10.pfb>
-Output written on MolDynReport.pdf (8 pages, 685530 bytes).
+Output written on MolDynReport.pdf (8 pages, 684147 bytes).
 PDF statistics:
  126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
