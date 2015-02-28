@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2015.2.25)  28 FEB 2015 12:03
+=======
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.1)  27 FEB 2015 18:02
+>>>>>>> 265790abe0375aa08bf8be93c5a7b3715f750e04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -370,13 +374,6 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 21.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Citation `thijssen' on page 1 undefined on input line 31.
-
-
-LaTeX Warning: Citation `deGroot' on page 1 undefined on input line 31.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
@@ -400,6 +397,7 @@ If that doesn't work, type  X <return>  to quit.
 
 LaTeX Warning: File `plots/fcc_crystal.png' not found on input line 55.
 
+<<<<<<< HEAD
 
 ! Package pdftex.def Error: File `plots/fcc_crystal.png' not found.
 
@@ -430,6 +428,14 @@ Using draft setting for this image.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+=======
+<plots/hcp_crystal.png, id=4, 262.73157pt x 167.12437pt>
+File: plots/hcp_crystal.png Graphic file (type png)
+
+<use plots/hcp_crystal.png>
+Package pdftex.def Info: plots/hcp_crystal.png used on input line 55.
+(pdftex.def)             Requested size: 103.44417pt x 65.80046pt.
+>>>>>>> 265790abe0375aa08bf8be93c5a7b3715f750e04
 
 Overfull \hbox (1.01083pt too wide) in paragraph at lines 54--57
  [] 
@@ -527,27 +533,33 @@ ne 293.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
 
 
-LaTeX Warning: Citation `thijssen' on page 5 undefined on input line 312.
+Package caption Warning: \label without proper \caption on input line 313.
+See the caption package documentation for explanation.
 
 
-LaTeX Warning: Citation `thijssen' on page 5 undefined on input line 312.
+LaTeX Warning: Reference `pressuretab' on page 5 undefined on input line 303.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--317
-
- []
-
-
-LaTeX Warning: Citation `thijssen' on page 5 undefined on input line 323.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
+
+ []
+
+<<<<<<< HEAD
 [5 <./plots/correlationfunctionT05rho12x.pdf> <./plots/corfunct1rho08n864lp500.
 pdf> <./plots/correlationfunctionT3Rho03x.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 331--332
+=======
+[5 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/correlationfunctionT
+05rho12x.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/corfunct1
+rho08n864lp500.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/cor
+relationfunctionT3Rho03x.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
+>>>>>>> 265790abe0375aa08bf8be93c5a7b3715f750e04
 
  []
 
@@ -560,23 +572,30 @@ File: plots/presn100lp10000T1rho088prt864.pdf Graphic file (type pdf)
 
 <use plots/presn100lp10000T1rho088prt864.pdf>
 Package pdftex.def Info: plots/presn100lp10000T1rho088prt864.pdf used on input 
-line 335.
+line 337.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 353--354
+ [6 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/presn100lp10000T1rh
+o088prt864.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
 
  []
 
+<<<<<<< HEAD
 [6 <./plots/presn100lp10000T1rho088prt864.pdf>] (./MolDynReport.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 ) [7] (./MolDynReport.aux)
+=======
+(C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.bbl) [7]
+(C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.aux)
+>>>>>>> 265790abe0375aa08bf8be93c5a7b3715f750e04
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  5388 strings out of 493104
  79157 string characters out of 6136932
  161230 words of memory out of 5000000
@@ -600,6 +619,31 @@ Output written on MolDynReport.pdf (7 pages, 528389 bytes).
 PDF statistics:
  111 PDF objects out of 1000 (max. 8388607)
  71 compressed objects within 1 object stream
+=======
+ 5046 strings out of 493921
+ 73963 string characters out of 3144882
+ 147810 words of memory out of 3000000
+ 8284 multiletter control sequences out of 15000+200000
+ 12468 words of font info for 48 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 36i,19n,38p,867b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on MolDynReport.pdf (7 pages, 568016 bytes).
+PDF statistics:
+ 116 PDF objects out of 1000 (max. 8388607)
+>>>>>>> 265790abe0375aa08bf8be93c5a7b3715f750e04
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
