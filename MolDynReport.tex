@@ -259,7 +259,7 @@ P = \frac{N K_B T}{V} - \frac{1}{3 V} \langle \sum\limits_{i=1}^N \sum\limits_{j
 \label{prescomp}
 \end{equation}
 
-\noindent The last term in this equation can be calculated since for $R>R_c$, $g(R) = 1$. For the mentioned values of $\epsilon$ and $\sigma$ in the Lennard Jones potential, the value is $
+\noindent The last term in this equation can be calculated since for $R>R_c$, $g(R) = 1$. For the mentioned values of $\epsilon$ and $\sigma$ in the Lennard Jones potential, the value for the integral is $0.9756$.
 
 \section{Discussion}
 \label{disc}
@@ -350,18 +350,26 @@ Once a thermostat was established, correlation functions could be calculated.  A
   0.5 & 1.2 & 1.1105 & 0.0056 & 0.0021 & 0.0002 \\ \hline
 \end{tabular}
 \label{pressuretab}
-\caption{Pressure of a gas, solid, and liquid (top to bottom), at a given temperature $T$ and density $\rho$.  $\sigma$ gives the standard deviation of each calculation.  \textbf{Explain the difference between each of the sigma values.}  Numbers can be compared to \cite{thijssen}.}
+\caption{Pressure of a gas, solid, and liquid (top to bottom), at a given temperature $T$ and density $\rho$.  $\sigma$ gives the standard deviation of each calculation. Numbers can be compared to \cite{thijssen}.}
 \end{center}
 \end{table*}
 
-\textbf{sorry for the ugly indent, but these are the numbers we can work with. We should add that are results lie close to those obtained by the method Jos has used. He finds for T = 1, rho = 0.88 a value of 2.98 for p/rho. If we divide our p by rho, we get: 3.07. Sadly enough it is not exactly the same, but ok. sorry i couldn't write this nicely, i'm a bit to tired.}\\
+The pressure was calculated for different values of temperature and density and shown in table \ref{pressuretab}. The standard deviation of the the pressure is also shown. However, as becomes clear from the upper figure in \ref{errex}, besides strong short time range fluctuations, there is also a longer time range fluctuation. This can be seen from the fact that for certain time ranges the pressure fluctuates around a higher average than for other time ranges. In order to measure the long time range fluctuation, we divided the pressure up in blocks of $100$ timesteps and took the mean and standard deviation of the block pressure. The standard deviation of the mean of the block pressure is also calculated and can be taken as the error of the pressure. In figure \ref{errex} the lower figure is the block pressure, where one can see that the short time fluctuations are averaged out.\\
 
-\textbf{This (above) should go into the report when talking about the pressure calculations.}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\linewidth]{plots/presn100lp10000T1rho088prt864.pdf}
+\caption{Top, pressure calculated for every time step.  Bottom, pressure averaged over every 100 time steps in the top plot. Both graphs for $T = 1, \rho = 0.88$}
+\label{errex}
+\end{center}
+\end{figure}
+
+The calculated value for the pressure can be compared to values from the literature. Results from an experiment with the same setup yielded a value of $\frac{P}{\rho} = 2.98$ with $\rho = 0.88, T = 1$. The value for $P/\rho$ for the same temperature and density that we found was $\frac{P}{\rho} = \frac{2.6982}{0.88} = 3.07 \pm 0.00 $. Hence the difference is small but significant. The reason for this difference is subject to further research.
 
 \section{Conclusion}
 \label{conc}
 
-In conclusion, we successfully ran a molecular dynamics simulation of 108 argon atoms.  Beginning in an fcc crystalline lattice with periodic boundary conditions, we simulated contact with thermostats of $T=0.49983 \pm 0.000111$ eV, $T= 1.01501 \pm 0.000203$ eV, and $T=2.975473 \pm 0.000365$ eV.  From there, we calculated calculated properties of a gas at $T=3$ eV, $\rho=0.3$ $\AA ^{-3}$ with $P=5.4862 \pm 0.0010 $ eV$\AA^{-3}$, a liquid at $T=1$ eV, $\rho =0.8$ $\AA ^{-3}$ with $P=2.6982 \pm 0.0008$ eV$\AA^{-3}$, and a solid with $T=0.5$ eV, $\rho=1.2$ $\AA ^{-3}$ at $P=1.1105 \pm 0.0002 $ eV$\AA^{-3}$.  With the exception of some of the pressure values, our current calculations agree with those of \cite{thijssen} under similar conditions.  \\
+In conclusion, we successfully ran a molecular dynamics simulation of 864 argon atoms.  Beginning in an fcc crystalline lattice with periodic boundary conditions, we simulated contact with thermostats of $T=3$ eV, $T=1$ eV, and $T=0.5$ eV.  From there, we calculated calculated properties of a gas at $T=0.49983 \pm 0.000111$ eV, $\rho=0.3$ $\AA ^{-3}$ with $P=5.4862 \pm 0.0010 $ eV$\AA^{-3}$, a liquid at $T= 1.01501 \pm 0.000203$ eV, $\rho =0.8$ $\AA ^{-3}$ with $P=2.6982 \pm 0.0008$ eV$\AA^{-3}$, and a solid with $T=2.975473 \pm 0.000365$  eV, $\rho=1.2$ $\AA ^{-3}$ at $P=1.1105 \pm 0.0002 $ eV$\AA^{-3}$.  With the exception of some of the pressure values, our current calculations agree with those of \cite{thijssen} under similar conditions.  \\
 
 Further work can still be done.  There are other interesting thermodynamical quantities that can be calculated for this system, such as the specific heat, chemical potential, and free energy.  It would also be interesting to change the initial conditions of the system.  Instead of periodic boundary conditions, put the system in a physical box and see how the interactions with the wall change the observables.  Also, a different crystalline structure (such as hcp) could be used as the initial configuration.  This would allow us to see whether the system did rearrange itself into the true fcc ground state of argon.  Even with all of these possibilities, we provided a realistic molecular dynamics simulation of argon.  
 
@@ -373,13 +381,7 @@ Like experimental measurements, numerical calculations should include error bars
 
 There are several ways that we can calculate a time average for our calculation.  Perhaps, the most obvious one is to run the calculation several times to generate a mean and a standard deviation.  However, this process is lengthy and can be heavily dependent on the seed of the random number generator used in initializing positions and velocities the particles.  \\
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=\linewidth]{plots/presn100lp10000T1rho088prt864.pdf}
-\caption{Top, pressure calculated for every time step.  Bottom, pressure averaged over every 100 time steps in the top plot.  }
-\label{errex}
-\end{center}
-\end{figure}
+
 
 It is, therefore, much better to run one simulation and average over many blocks of time.  In each simulation, after a long enough period of time, the quantity of interests will settle on some mean value with every time step oscillating around this value, as show in Figure \ref{errex}.  While each value depends on the previous value, averaging over a large enough number of time steps will produce a value independent of the previous block of time steps.  For each of these blocks, 100 time steps, an average is calculated (this is equivalent to having many measurements from an experiment), and then from each of these "measurements", we can calculate an average value for our simulation and an error for that value.  The average value is defined as 
 
