@@ -261,7 +261,7 @@ We started with our system in a face-central cubic crystalline configuration (re
 
 \subsection{Energy Conservation}
 
-To test that our simulation was working correctly, we first calculated the total energy of the system, which should be constant over each time step.  One such example is found in Figure \ref{engcons}.  This exercise helped us find a reasonable time step and range of temperatures.  With too large of a time step, the particles could be moved into the highly repulsive region of another's potential, which is clearly unphysical. The particle is essentially moving too fast to respond to the potentials of the other particles around it. As a result of this, when the particle is located in this highly repulsive region, the particles will be bounced off with very high velocities which makes the energy blow up. On the other hand, a time step that is too small can cause a time-intensive computation and provide a level of detail that is not beneficial to this type of simulation.  \\
+To test that our simulation was working correctly, we first calculated the total energy of the system, which should be constant over each time step.  One such example is found in Figure \ref{engcons}.  This exercise helped us find a reasonable time step and range of temperatures.  With too large of a time step, the particles could be moved into the highly repulsive region of another's potential, which is clearly unphysical. The particle is essentially moving too fast to respond to the potentials of the other particles around it. As a result of this, when the particle is located in this highly repulsive region, the particles will be bounced off with very high velocities which makes the energy blow up. On the other hand, a time step that is too small can cause a time-intensive computation and provide a level of detail that is not beneficial to this type of simulation. In figure \ref{engcons}, it can be seen that when the thermostat, which is discussed in the next section, is switched off, the total energy remains constant. The total energy is the sum of the kinetic- and the potential energy. The potential energy is negative, as can be derived from the potential in equation \label{LJpot}. Besides, it can be seen that both the kinetic- and the potential energy fluctuate, but these fluctuations balance out in the total energy. These fluctuations have influence on the pressure and temperature as will be discussed later.\\
 
 \textbf{Explain why the total energy is negative.}\\
 
@@ -277,7 +277,7 @@ Temperature is another variable that must be kept in a reasonable range.  Becaus
 
 \subsection{Thermostat}
 
-Using the renormalization method explained in Section \ref{thermo}, we were able to bring our system to any given target temperature (non-relativistic) from any starting temperature.  Some of these target temperatures that are used in the following calculations are given in Table 1.  \\
+Using the renormalization method explained in Section \ref{thermo}, we were able to bring our system to any given target temperature (non-relativistic) from any starting temperature.  Some of these target temperatures and the temperature that the system actually reached together with their errors are given in Table \ref{temptable}. The temperature is directly related to the kinetic energy, as earlier discussed. Since the kinetic energy fluctuates, we find fluctuations in the temperature as well. Though, due to the fact that the standard deviation of the temperature is about a factor $100$ smaller than the actual temperature, we can conclude that fluctuations in temperature are small. \\
 
 \begin{table*}
 \begin{center}
@@ -292,12 +292,12 @@ Using the renormalization method explained in Section \ref{thermo}, we were able
 \end{center}
 \end{table*}
 
-Based on how often the velocity was renormalized, the temperature could be brought more slowly or quickly to the target temperature.  \textbf{include plots - every step, every 10 steps, every 100 steps, and maybe a little more discussion on this point.}
+In Figure \label{engrenbrm} one can see how the renormalization influences both the kinetic and the total energy. Since the initial temperature was lower than the target temperature it is clear to see that the total energy goes up stepwise. Also one can see that there are some sudden increases in the kinetic energy. These occur due to the fact that for each renormalization the velocity of the particles is increased. 
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\linewidth]{plots/renormalizationshorttimerange.pdf}
-\caption{Plot of the renormalized energy (calculated with the renormalized velocity) over 250 time steps.  The green line is the total energy and the blue line is the kinetic energy.}
+\caption{Plot of the renormalized energy (calculated with the renormalized velocity) over 250 time steps, with a renormalization every 10 steps.  The green line is the total energy and the blue line is the kinetic energy.}
 \label{engrenorm}
 \end{center}
 \end{figure}

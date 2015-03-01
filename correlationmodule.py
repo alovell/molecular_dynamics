@@ -2,8 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pylab
 
-def cor(npdim,N,distances,nbins,finalbins,plotflag,Ttarg,density):
+
 #find the correlation function of the system
+
+def cor(npdim,N,distances,nbins,finalbins,plotflag,Ttarg,density):
   dmax = np.sqrt(5.)*npdim
   bin_vec = np.zeros(nbins, dtype = float)
 
@@ -16,8 +18,8 @@ def cor(npdim,N,distances,nbins,finalbins,plotflag,Ttarg,density):
       
 
 
-#normalize based on the volume of the radial shell
-#keeping order R^2*dR -> V=4*PI*R^2*dR
+# normalize based on the volume of the radial shell
+
   dR = dmax/nbins
   Rin = np.zeros((nbins), dtype=float)
   for bin_num in range(nbins):
@@ -28,7 +30,7 @@ def cor(npdim,N,distances,nbins,finalbins,plotflag,Ttarg,density):
   
   finalbins[0] = 0.0001 # to make sure that the plot starts at r=0  
   if plotflag == 1:
-    plt.plot(Rin,finalbins)#,width=dR)
+    plt.plot(Rin,finalbins)
     plt.xlim([0,max(Rin)*(5/8.)])
     plt.ylabel('g(r)')
     plt.xlabel('r')
