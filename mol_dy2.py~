@@ -10,8 +10,6 @@ import pylab
 from mpl_toolkits.mplot3d import Axes3D
 import sys
 
-
-
 # import self produced classes
 
 import forcemodule as fm
@@ -24,6 +22,7 @@ import pressuremodule
 corrflag = 2 # 2 to obtain pressure, 1 to obtain correlation function
 
 # independent parameters
+
 dt = 0.004
 N=864
 lpnum = 10000
@@ -38,6 +37,7 @@ presint = 0.97596 #This is the value for the integral which is the third term to
 
 
 # Loading initial conditions
+
 mom = init_sys.init_mom(N, temp) 
 pos, l, npdim = init_sys.init_pos(N, density) 
 forces = init_sys.init_forc(N)
@@ -49,6 +49,7 @@ kenarray = init_sys.init_kenarray(lpnum)
 potarray = init_sys.init_potarray(lpnum)
 
 # Iteration Verlet method
+
 # Initializing the first values for the loop
 pot = 0.0
 presvirial = 0.0
@@ -77,12 +78,13 @@ for lp in range(lpnum):
     prestime[cnt,:] = density*((2*Ken/(3*N)) + presvirial/(3*N) + np.pi*N*presint/Ken) 
     cnt = cnt + 1
 
+# pressure module, writes data into a datafile
 
-#pressure module
 if corrflag == 2:
   pressuremodule.pres(lpnum,cutoff,n,prestime,toten,kenarray,potarray,Ttarg,density,N)
 
 # Calculate and plot correlationfunction
+
 if corrflag == 1:
   finalbins = 2*bin_vec_tot/((lpnum - cutoff)*density*(N-1))
   bin_vec = correlationmodule.cor(npdim,N,distances,nbins,finalbins,corrflag,Ttarg,density)

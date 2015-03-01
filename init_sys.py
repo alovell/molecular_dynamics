@@ -1,4 +1,4 @@
-#Initial momenta module
+#Initializing module
 import numpy as np
 import random as rn
 
@@ -11,10 +11,8 @@ def init_mom(N, temp):
 
 def init_pos(N,density):
   npdim = int(round((N/4)**(1./3.)))
-#  print npdim, 'npdim'
   l = (N/density)**(1.0/3)
   a = 0.5*l/npdim
-#  print npdim, l, a
   pos = np.zeros((N,3), dtype = float)
   cnt = 0
   for k in range(npdim):

@@ -88,24 +88,3 @@ if corrflag == 2:
 if corrflag == 1:
   finalbins = 2*bin_vec_tot/((lpnum - cutoff)*density*(N-1))
   bin_vec = correlationmodule.cor(npdim,N,distances,nbins,finalbins,corrflag,Ttarg,density)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
