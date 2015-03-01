@@ -1,8 +1,6 @@
-%Changed 'the lattice structure' to 'the most stable and standard lattice structure' at the beginning of crystalline array since theoretically hcp structures can be achieved
-%Changed a sentence in Verlet to roll better
-%Change face-central cubic in 3.1 to face-centered cubic
-%Removed a sentence at the end of the conclusion which stated our simulation was good enough, found this odd and unnecessary
-%Removed a comma after 'because' in the third paragraph of energy conservation since it broke the sentence overly.
+%added m=1 to initial conditions 
+%added small description to pressure table
+%removed last sentence from error calculation as it was repetitive
 
 \documentclass{article}
 \usepackage{amsmath}
@@ -266,7 +264,7 @@ P = \frac{N k_B T}{V} - \frac{1}{3 V} \langle \sum\limits_{i=1}^N \sum\limits_{j
 \end{split}
 \end{equation}
 
-\noindent The last term in this equation can be calculated once numerically since for $R>R_c$, $g(R) = 1$. For the mentioned values of $\epsilon$ and $\sigma$ in the Lennard-Jones potential, the value for the integral is $0.9756$.
+\noindent The last term in this equation can be calculated once numerically since for $R>R_c$, $g(R) = 1$. For the values of $\epsilon$ and $\sigma$ in the Lennard-Jones potential mentioned in Section \ref{IC}, the value for the integral is $0.9756$.
 
 \section{Discussion}
 \label{disc}
@@ -274,14 +272,15 @@ P = \frac{N k_B T}{V} - \frac{1}{3 V} \langle \sum\limits_{i=1}^N \sum\limits_{j
 In the following subsections, we present the results of our simulation.  First, we describe the initial conditions under which our simulation was performed and show that our system conserves energy.  Next, we argue that our system is modeled to be in contact with a thermostat of variable temperature.  Finally, we present the correlation functions and pressures for each of our simulations of a solid, liquid, and gas.
 
 \subsection{Initial Conditions}
+\label{IC}
 
-We started with our system in a face-centered cubic crystalline configuration (recall Figure \ref{fcc}).  Our simulation modeled 864 argon atoms with a unit cell length dependent on the density of the system.  The initial positions were determined by the crystalline structure of an FCC lattice, and the initial velocities were randomly picked from a Maxwell-Boltzmann distribution centered around and average velocity of zero and standard deviation of $\sqrt{T}$, where $T$ denotes the temperature of the system.  The boundary conditions of our system were periodic; every time a particle crossed outside of the box by a distance $b$, is was taken to be at a position $L-b$ inside of the box (where the length of the box is $L$).  This simulates a particle moving continuously, regardless of box size.  The cut-off distance where the particles were taken to be non-interacting was $r_c = 3.2$ $\AA$, and the time step for the Verlet method was $\Delta t = 0.004$ s.  Each simulation was run for 10,000 time steps, which was found to be long enough to bring our system to equilibrium.  As mentioned previously, we will take $\sigma=\epsilon=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
+We started with our system in a face-centered cubic crystalline configuration (recall Figure \ref{fcc}).  Our simulation modeled 864 argon atoms with a unit cell length dependent on the density of the system.  The initial positions were determined by the crystalline structure of an FCC lattice, and the initial velocities were randomly picked from a Maxwell-Boltzmann distribution centered around and average velocity of zero and standard deviation of $\sqrt{T}$, where $T$ denotes the temperature of the system.  The boundary conditions of our system were periodic; every time a particle crossed outside of the box by a distance $b$, is was taken to be at a position $L-b$ inside of the box (where the length of the box is $L$).  This simulates a particle moving continuously, regardless of box size.  The cut-off distance where the particles were taken to be non-interacting was $r_c = 3.2$ $\AA$, and the time step for the Verlet method was $\Delta t = 0.004$ s.  Each simulation was run for 10,000 time steps, which was found to be long enough to bring our system to equilibrium.  As mentioned previously, we will take $\sigma=\epsilon=m=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
 
 \subsection{Energy Conservation}
 
 To test that our simulation was working correctly, we first calculated the total energy of the system, which should be constant over the length of the simulation.  One such example is found in Figure \ref{engcons}.  This exercise helped us find a reasonable time step and range of temperatures.  With too large of a time step, the particles could be moved into the highly repulsive region of another's potential, which is clearly unphysical. The particle is then essentially moving too fast to respond to the potentials of the other particles around it. As a result, when the particle is located in this highly repulsive region, the particles will be bounced off with very high velocities which makes the energy blow up. On the other hand, a time step that is too small can cause a time-intensive computation and provide a level of detail that is not beneficial to this type of simulation. \\
 
-In Figure \ref{engcons}, it can be seen that when the thermostat, which is discussed in the next section, is switched off, the total energy remains constant.  From Figure \ref{engcons}, the total energy, which is the sum of the kinetic and potential energies, is negative.  This is due to the large amount of negative potential energy, as can be derived from the potential in equation (\ref{LJpot}).   We can also see that both the kinetic and the potential energies fluctuate, but these fluctuations balance out in the total energy. These fluctuations have influence on the pressure and temperature, as will be discussed later.\\
+In Figure \ref{engcons}, it can be seen that when the thermostat, which is discussed in the next section, is switched off, the total energy remains constant (after 2,000 time steps).  From Figure \ref{engcons}, the total energy, which is the sum of the kinetic and potential energies, is negative.  This is due to the large amount of negative potential energy, as can be derived from the potential in equation (\ref{LJpot}).   We can also see that both the kinetic and the potential energies fluctuate, but these fluctuations balance out in the total energy. These fluctuations have influence on the pressure and temperature, as will be discussed later.\\
 
 To ensure that energy is conserved, we must also keep the temperature in a reasonable range.  Because we have taken $k_B =1$, energy and temperature are measured with the same units.  If we take this to be electron volts, the conversion factor is $1 $ eV $\approx 11600$ K.  Thus, as temperature increases, we quickly enter a realm where the particles are traveling at relativistic speeds.  Our simulation is purely classical and thus not equipped to accurately calculate relativistic simulations.
 
@@ -363,7 +362,7 @@ Once a thermostat was established, correlation functions could be calculated.  A
   0.5 & 1.2 & 1.1105 & 0.0056 & 0.0021 & 0.0002 \\ \hline
 \end{tabular}
 \label{pressuretab}
-\caption{Pressure of a gas, solid, and liquid (top to bottom), at a given temperature $T$ and density $\rho$.  $\sigma$ gives the standard deviation of each calculation. Numbers can be compared to \cite{thijssen}.}
+\caption{Pressure of a gas, solid, and liquid (top to bottom), at a given temperature $T$ and density $\rho$.  $\sigma _P$ gives the standard deviation of each calculation.  Values of pressure should be quoted as $P \pm \sigma _{Pblock}/\sqrt{N}$.  Numbers can be compared to \cite{thijssen}.}
 \end{center}
 \end{table*}
 
@@ -380,7 +379,7 @@ The pressure was calculated for the three different values of temperature and de
 
 As becomes clear from the upper portion of Figure \ref{errex}, besides strong short time range fluctuations, there is also a longer time range fluctuation.  This can be seen from the fact that for certain time ranges the pressure fluctuates around a higher average than for other time ranges.  In order to measure the long time range fluctuation, we divided the pressure up in blocks of $100$ time steps and took the mean and standard deviation of the block pressure (explained in greater detail in Appendix \ref{errorcalc}).  The standard deviation of the mean of the block pressure is also calculated and can be taken as the error of the pressure.  In the bottom half of Figure \ref{errex} is the block pressure, where one can see that the short time fluctuations are averaged out.\\
 
-The calculated values for the pressure can be compared to values from the literature \cite{thijssen}, \cite{verlet}. Results from an experiment with the same setup yielded a value of $\frac{P}{\rho} = 2.98$ eV with $\rho = 0.88$ $\AA ^{-3}$, $T = 1$ eV. The value for $P/\rho$ for the same temperature and density that we found was $\frac{P}{\rho} = \frac{2.6982}{0.88} = 3.07 \pm 0.00 $ eV.  The difference appears small but is significant. The reason for this difference is subject to further research.
+The calculated values for the pressure can be compared to values from the literature, \cite{thijssen}, \cite{verlet}. Results from an experiment with the same setup yielded a value of $\frac{P}{\rho} = 2.98$ eV with $\rho = 0.88$ $\AA ^{-3}$, $T = 1$ eV. The value for $P/\rho$ for the same temperature and density that we found was $\frac{P}{\rho} = \frac{2.6982}{0.88} = 3.07 \pm 0.00 $ eV.  The difference appears small but is significant. The reason for this difference is subject to further research.
 
 \section{Conclusion}
 \label{conc}
@@ -415,8 +414,6 @@ It is, therefore, much better to run one simulation and average over many blocks
 \noindent where $\delta$ is the error on a given quantity, $N$ is the number of time-step blocks, and $C_i$ is the quantity value for each time step block.  Throughout this report, $\delta$ is denoted as $\sigma /\sqrt{N}$.  \\
 
 This process ensures that we include fluctuations in the quantities that we report, as well as account for a decreasing error as the number of measurements increases.  \\
-
-This ensures that we include fluctuations in the numbers that we report, as well as account for a decreasing error with an increasing number of "measurements".  
 
 \end{multicols}
 
