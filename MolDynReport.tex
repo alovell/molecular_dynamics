@@ -187,14 +187,16 @@ Once the system is at a constant temperature, we can calculate the correlation f
 \end{split}
 \end{equation}
 
-\noindent where the third line uses the Taylor approximation of $(1+z)^n = 1 + nz+ ...$  Thus the correlation function is
+\noindent where the third line uses the Taylor approximation of $(1+z)^n = 1 + nz+ ...$  Taking the total volume, the number of particles and double counting into account, we arrive at the following correlation function \ref{corfunceq}. 
 
 \begin{equation}
-g(r) = \frac{N_r}{4 \pi r^2 \delta r}
+g(r) = \frac{2VN_r}{N(N-1)4 \pi r^2 \delta r}
+\label{corfunceq}
 \end{equation}
 
 \noindent where $N_r$ is the number of particles found in the shell $r + \delta r$.  \\
 
+In order to obtain a time averaged correlationfunction, the correlationfunction is calculated for each time step after the renormalization has been switched off. Especially for higher temperatures, the correlationfunction fluctuates a bit for distances greater than $2\AA$. Therefore it makes sense to take a time average, so that an accidental fluctuation would not be evaluated as an actual correlation. In the code this comes back as dividing by the number of timesteps.
 The correlation function has distinct shapes for each state of matter.  Solids are classified by period spikes which indicates a lattice of particles.  Liquids look like a decaying periodic function.  Lastly, gases show an exponential-like decay in their correlation function.  These are the characteristics we will be looking to explore in our calculations. \\
 
 %\noindent Another physical quantity that can be calculated is the pressure. The pressure can be calculated by making use of the following formula:
@@ -246,9 +248,18 @@ K = \sum \limits _a \frac{\textbf{p}_{a}^2}{2m_a}
 
 \begin{equation}
 P = \frac{2}{3V} \left [ \bar{K} + \frac{1}{2} \overline{\sum \limits _{a\ne b} r_{ab} F(r_{ab})} \right ]
+\label{hampres}
 \end{equation}
 
 \noindent Here, $r_{ab} = |\textbf{r}_a - \textbf{r}_b|$, the distance between any pair of particles.
+The second term of the right hand side of the pressure consist of a derivative of the potential. This is equivalent to negative value of the force. In the Verlet Algorithm, the same forces were used to update the momenta. In order to not do double calculations, these forces could be used here again. However, for reasons of calculation speed, the forces were only calculated between particles that were within a certain range $R_c$. For this reason we need to split up the mentioned term in equation \ref{hampres} in a region where $0 < R < R_c $ and a region where $ R_c < R < \infty $. This results in the following equation \ref{prescomp}.
+
+\begin{equation}
+P = \frac{N K_B T}{V} - \frac{1}{3 V} \langle \sum\limits_{i=1}^N \sum\limits_{j>i}^N R_{ij} \frac{\partial u(R)}{\partial R}\rangle_{R < R_c} - \frac{2 \pi N^2}{3 V^2} \int_{R_c}^\infty R^3 \frac{\partial u(R)}{\partial R} g(R) dR
+\label{prescomp}
+\end{equation}
+
+\noindent The last term in this equation can be calculated since for $R>R_c$, $g(R) = 1$. For the mentioned values of $\epsilon$ and $\sigma$ in the Lennard Jones potential, the value is $
 
 \section{Discussion}
 \label{disc}
@@ -262,8 +273,6 @@ We started with our system in a face-central cubic crystalline configuration (re
 \subsection{Energy Conservation}
 
 To test that our simulation was working correctly, we first calculated the total energy of the system, which should be constant over each time step.  One such example is found in Figure \ref{engcons}.  This exercise helped us find a reasonable time step and range of temperatures.  With too large of a time step, the particles could be moved into the highly repulsive region of another's potential, which is clearly unphysical. The particle is essentially moving too fast to respond to the potentials of the other particles around it. As a result of this, when the particle is located in this highly repulsive region, the particles will be bounced off with very high velocities which makes the energy blow up. On the other hand, a time step that is too small can cause a time-intensive computation and provide a level of detail that is not beneficial to this type of simulation. In figure \ref{engcons}, it can be seen that when the thermostat, which is discussed in the next section, is switched off, the total energy remains constant. The total energy is the sum of the kinetic- and the potential energy. The potential energy is negative, as can be derived from the potential in equation \label{LJpot}. Besides, it can be seen that both the kinetic- and the potential energy fluctuate, but these fluctuations balance out in the total energy. These fluctuations have influence on the pressure and temperature as will be discussed later.\\
-
-\textbf{Explain why the total energy is negative.}\\
 
 \begin{figure}[H]
 \begin{center}
