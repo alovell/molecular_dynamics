@@ -1,7 +1,8 @@
-%Hoi Perry, je toevoegingen zijn:
-%-Verlet methode
-%Errorberekening
-%Veel errors in 2.4
+%Changed 'the lattice structure' to 'the most stable and standard lattice structure' at the beginning of crystalline array since theoretically hcp structures can be achieved
+%Changed a sentence in Verlet to roll better
+%Change face-central cubic in 3.1 to face-centered cubic
+%Removed a sentence at the end of the conclusion which stated our simulation was good enough, found this odd and unnecessary
+%Removed a comma after 'because' in the third paragraph of energy conservation since it broke the sentence overly.
 
 \documentclass{article}
 \usepackage{amsmath}
@@ -47,7 +48,7 @@ In the following subsections, we will give an overview of the concepts and equat
 \end{center}
 \end{figure}
 
-The lattice structure of argon is face-centered cubic (FCC).  The unit cell in an FCC crystal contains four atoms in the shape of a triangular pyramid, Figure \ref{unitcell}.  In the FCC lattice, the sheets of atoms stack on top of each other in such a way that every other layer is off-set by half of an atomic radius, Figure \ref{fcc}, left.  (This is in contrast to a HCP - hexagonal close packed - lattice where every other sheet of atoms lines up, Figure \ref{fcc}, right.)  \cite{crystal}  We use the FCC configuration for the initial conditions of our simulation because the equilibrium state of argon is an FCC lattice.  
+The most stable and standard lattice structure of argon is face-centered cubic (FCC).  The unit cell in an FCC crystal contains four atoms in the shape of a triangular pyramid, Figure \ref{unitcell}.  In the FCC lattice, the sheets of atoms stack on top of each other in such a way that every other layer is off-set by half of an atomic radius, Figure \ref{fcc}, left.  (This is in contrast to a HCP - hexagonal close packed - lattice where every other sheet of atoms lines up, Figure \ref{fcc}, right.)  \cite{crystal}  We use the FCC configuration for the initial conditions of our simulation because the equilibrium state of argon is an FCC lattice.  
 
 \begin{figure}[H]
 \begin{center}
@@ -116,7 +117,7 @@ p_{i+1}=p_i + F \Delta t
 x_{i+1} = x_i + \frac{p_i}{m} + \frac{1}{2}\frac{F(\Delta t)^2}{m}
 \end{equation}
 
-\noindent this can lead to numerical inaccuracies in the position calculation because of the dependence on the square of the time step and both the previous force and momentum.  Therefore, in our algorithm we make use of the Verlet method due to its accuracy, stability and its tendency to traject the same path in phase space within numerical precision.  In our simulation we will need the momenta and positions at every time step to calculate parameters such as energy.  A variety of the Verlet method which accomplishes this is known as the Verlet velocity scheme \cite{verlet}.
+\noindent this can lead to numerical inaccuracies in the position calculation because of the dependence on the square of the time step and both the previous force and momentum.  The advantages of using the Verlet method are its accuracy, stability and its tendency to traject the same path in phase space within numerical precision.  In our simulation we will need the momenta and positions at every time step to calculate parameters such as energy.  A variety of the Verlet method which accomplishes this is known as the Verlet velocity scheme \cite{verlet}.
 
 % link: http://www.physics.udel.edu/~bnikolic/teaching/phys660/numerical_ode/node5.html
 
@@ -274,7 +275,7 @@ In the following subsections, we present the results of our simulation.  First, 
 
 \subsection{Initial Conditions}
 
-We started with our system in a face-central cubic crystalline configuration (recall Figure \ref{fcc}).  Our simulation modeled 864 argon atoms with a unit cell length dependent on the density of the system.  The initial positions were determined by the crystalline structure of an FCC lattice, and the initial velocities were randomly picked from a Maxwell-Boltzmann distribution centered around and average velocity of zero and standard deviation of $\sqrt{T}$.  The boundary conditions of our system were periodic; every time a particle crossed outside of the box by a distance $b$, is was taken to be at a position $L-b$ inside of the box (where the length of the box is $L$).  This simulates a particle moving continuously, regardless of box size.  The cut-off distance where the particles were taken to be non-interacting was $r_c = 3.2$ $\AA$, and the time step for the Verlet method was $\Delta t = 0.004$ s.  Each simulation was run for 10,000 time steps, which was found to be long enough to bring our system to equilibrium.  As mentioned previously, we will take $\sigma=\epsilon=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
+We started with our system in a face-centered cubic crystalline configuration (recall Figure \ref{fcc}).  Our simulation modeled 864 argon atoms with a unit cell length dependent on the density of the system.  The initial positions were determined by the crystalline structure of an FCC lattice, and the initial velocities were randomly picked from a Maxwell-Boltzmann distribution centered around and average velocity of zero and standard deviation of $\sqrt{T}$, where $T$ denotes the temperature of the system.  The boundary conditions of our system were periodic; every time a particle crossed outside of the box by a distance $b$, is was taken to be at a position $L-b$ inside of the box (where the length of the box is $L$).  This simulates a particle moving continuously, regardless of box size.  The cut-off distance where the particles were taken to be non-interacting was $r_c = 3.2$ $\AA$, and the time step for the Verlet method was $\Delta t = 0.004$ s.  Each simulation was run for 10,000 time steps, which was found to be long enough to bring our system to equilibrium.  As mentioned previously, we will take $\sigma=\epsilon=k_B=1$, which also gives us a system where temperature and energy are measured in the same units.  
 
 \subsection{Energy Conservation}
 
@@ -282,7 +283,7 @@ To test that our simulation was working correctly, we first calculated the total
 
 In Figure \ref{engcons}, it can be seen that when the thermostat, which is discussed in the next section, is switched off, the total energy remains constant.  From Figure \ref{engcons}, the total energy, which is the sum of the kinetic and potential energies, is negative.  This is due to the large amount of negative potential energy, as can be derived from the potential in equation (\ref{LJpot}).   We can also see that both the kinetic and the potential energies fluctuate, but these fluctuations balance out in the total energy. These fluctuations have influence on the pressure and temperature, as will be discussed later.\\
 
-To ensure that energy is conserved, we must also keep the temperature in a reasonable range.  Because, we have taken $k_B =1$, energy and temperature are measured with the same units.  If we take this to be electron volts, the conversion factor is $1 $ eV $\approx 11600$ K.  Thus, as temperature increases, we quickly enter a realm where the particles are traveling at relativistic speeds.  Our simulation is purely classical and thus not equipped to accurately calculate relativistic simulations.
+To ensure that energy is conserved, we must also keep the temperature in a reasonable range.  Because we have taken $k_B =1$, energy and temperature are measured with the same units.  If we take this to be electron volts, the conversion factor is $1 $ eV $\approx 11600$ K.  Thus, as temperature increases, we quickly enter a realm where the particles are traveling at relativistic speeds.  Our simulation is purely classical and thus not equipped to accurately calculate relativistic simulations.
 
 \begin{figure}[H]
 \begin{center}
@@ -386,7 +387,7 @@ The calculated values for the pressure can be compared to values from the litera
 
 In conclusion, we successfully ran a molecular dynamics simulation of 864 argon atoms.  Beginning in an FCC crystalline lattice with periodic boundary conditions, we simulated contact with thermostats of target temperatures $T=3.0$ eV, $T=1.0$ eV, and $T=0.5$ eV.  From there, we calculated calculated properties of a gas at $T=0.49983 \pm 0.000111$ eV, $\rho=0.3$ $\AA ^{-3}$ with $P=5.4862 \pm 0.0010 $ eV$\AA^{-3}$, a liquid at $T= 1.01501 \pm 0.000203$ eV, $\rho =0.8$ $\AA ^{-3}$ with $P=2.6982 \pm 0.0008$ eV$\AA^{-3}$, and a solid with $T=2.975473 \pm 0.000365$  eV, $\rho=1.2$ $\AA ^{-3}$ at $P=1.1105 \pm 0.0002 $ eV$\AA^{-3}$.  With the exception of some of the pressure values, our current calculations agree with those of previous work under similar conditions.  \\
 
-Further work can still be done.  There are other interesting thermodynamical quantities that can be calculated for this system, such as the specific heat, chemical potential, and free energy.  It would also be interesting to change the initial conditions of the system.  Instead of periodic boundary conditions, put the system in a physical box and see how the interactions with the wall change the observables.  Also, a different crystalline structure (such as HPC) could be used as the initial configuration.  This would allow us to see whether the system did rearrange itself into the true FCC ground state of argon.  Even with all of these possibilities, we provided a realistic molecular dynamics simulation of argon.  
+Further work can still be done.  There are other interesting thermodynamical quantities that can be calculated for this system, such as the specific heat, chemical potential, and free energy.  It would also be interesting to change the initial conditions of the system.  Instead of periodic boundary conditions, put the system in a physical box and see how the interactions with the wall change the observables.  Also, a different crystalline structure (such as HPC) could be used as the initial configuration.  This would allow us to see whether the system did rearrange itself into the true FCC ground state of argon. 
 
 \appendix 
 

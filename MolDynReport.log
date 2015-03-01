@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.1)  1 MAR 2015 14:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.22)  1 MAR 2015 21:03
 entering extended mode
-**C:/Users/Amy/Documents/GitHub/molecular_dynamics/MolDynReport.tex
-(C:/Users/Amy/Documents/GitHub/molecular_dynamics/MolDynReport.tex
+**MolDynReport.tex
+("C:\Users\Perry\Documents\Jaar 6 AP\ICCP\molecular_dynamics\MolDynReport.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
 ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
  lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
@@ -214,10 +214,10 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \colbreak@box=\box55
 \multicol@sort@counter=\count112
 )
-(C:\Users\Amy\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
+(C:\Users\Perry\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
 Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 
-(C:\Users\Amy\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
+(C:\Users\Perry\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen130
@@ -231,7 +231,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \c@ContinuedFloat=\count113
 Package caption Info: float package is loaded.
 )
-(C:\Users\Amy\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
+(C:\Users\Perry\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
 \lst@mode=\count114
 \lst@gtempboxa=\box56
 \lst@token=\toks23
@@ -245,37 +245,36 @@ Package caption Info: float package is loaded.
 \lst@lineno=\count119
 \lst@maxwidth=\dimen140
 
-(C:\Users\Amy\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+(C:\Users\Perry\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
 \c@lstnumber=\count120
 \lst@skipnumbers=\count121
 \lst@framebox=\box57
 )
-(C:\Users\Amy\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
+(C:\Users\Perry\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
 File: listings.cfg 2014/09/06 1.5e listings configuration
 ))
 Package: listings 2014/09/06 1.5e (Carsten Heinz)
 
-(C:\Users\Amy\AppData\Roaming\MiKTeX\2.9\tex\latex\cite\cite.sty
+(C:\Users\Perry\AppData\Roaming\MiKTeX\2.9\tex\latex\cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
-(C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-
-(C:\Users\Amy\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+("C:\Users\Perry\Documents\Jaar 6 AP\ICCP\molecular_dynamics\MolDynReport.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+(C:\Users\Perry\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count122
 \scratchdimen=\dimen141
@@ -327,26 +326,26 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count128
-LaTeX Font Info:    Try loading font information for U+msa on input line 21.
+LaTeX Font Info:    Try loading font information for U+msa on input line 22.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 21.
+LaTeX Font Info:    Try loading font information for U+msb on input line 22.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 23--24
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
@@ -354,318 +353,321 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 File: plots/crystal_structure.png Graphic file (type png)
 
 <use plots/crystal_structure.png>
-Package pdftex.def Info: plots/crystal_structure.png used on input line 44.
+Package pdftex.def Info: plots/crystal_structure.png used on input line 45.
 (pdftex.def)             Requested size: 149.41896pt x 115.43768pt.
+ [1
 
-<plots/fcc_crystal.png, id=3, 274.77657pt x 179.16937pt>
+{C:/Users/Perry/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Pe
+rry/Documents/Jaar 6 AP/ICCP/molecular_dynamics/plots/crystal_structure.png>]
+<plots/fcc_crystal.png, id=13, 274.77657pt x 179.16937pt>
 File: plots/fcc_crystal.png Graphic file (type png)
 
 <use plots/fcc_crystal.png>
-Package pdftex.def Info: plots/fcc_crystal.png used on input line 55.
+Package pdftex.def Info: plots/fcc_crystal.png used on input line 56.
 (pdftex.def)             Requested size: 103.44417pt x 67.45079pt.
 
-<plots/hcp_crystal.png, id=4, 262.73157pt x 167.12437pt>
+<plots/hcp_crystal.png, id=14, 262.73157pt x 167.12437pt>
 File: plots/hcp_crystal.png Graphic file (type png)
 
 <use plots/hcp_crystal.png>
-Package pdftex.def Info: plots/hcp_crystal.png used on input line 55.
+Package pdftex.def Info: plots/hcp_crystal.png used on input line 56.
 (pdftex.def)             Requested size: 103.44417pt x 65.80046pt.
 
-Overfull \hbox (1.01083pt too wide) in paragraph at lines 54--57
+Overfull \hbox (1.01083pt too wide) in paragraph at lines 55--58
  [] 
  []
 
-[1
 
-{C:/Users/Amy/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Amy/
-Documents/GitHub/molecular_dynamics/plots/crystal_structure.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 <plots/VLJ.pdf, id=15, 361.35pt x 207.77625pt>
 File: plots/VLJ.pdf Graphic file (type pdf)
  <use plots/VLJ.pdf>
-Package pdftex.def Info: plots/VLJ.pdf used on input line 97.
+Package pdftex.def Info: plots/VLJ.pdf used on input line 98.
 (pdftex.def)             Requested size: 229.8775pt x 132.18056pt.
- [2 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/fcc_crystal.png> <C
-:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/hcp_crystal.png> <C:/User
-s/Amy/Documents/GitHub/molecular_dynamics/plots/VLJ.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
+ [2 <C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecular_dynamics/plots/fcc_cryst
+al.png> <C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecular_dynamics/plots/hcp_c
+rystal.png> <C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecular_dynamics/plots/V
+LJ.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 200.
+LaTeX Warning: Command \r invalid in math mode on input line 201.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 277.
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 278.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--284
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
  []
 
 
 
-pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
-mics/plots/energyT1rho088N864lpnum1000.pdf): PDF inclusion: found PDF version <
-1.6>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecula
+r_dynamics/plots/energyT1rho088N864lpnum1000.pdf): PDF inclusion: found PDF ver
+sion <1.6>, but at most version <1.5> allowed
 <plots/energyT1rho088N864lpnum1000.pdf, id=48, 815.045pt x 614.295pt>
 File: plots/energyT1rho088N864lpnum1000.pdf Graphic file (type pdf)
 
 <use plots/energyT1rho088N864lpnum1000.pdf>
 Package pdftex.def Info: plots/energyT1rho088N864lpnum1000.pdf used on input li
-ne 289.
+ne 290.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 290.
+LaTeX Warning: Command \r invalid in math mode on input line 291.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 290.
+LaTeX Warning: Command \r invalid in math mode on input line 291.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--298
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 299--300
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
 
-pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
-mics/plots/renormalizationshorttimerange.pdf): PDF inclusion: found PDF version
- <1.6>, but at most version <1.5> allowed
+ []
+
+
+
+pdfTeX warning: pdflatex (file C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecula
+r_dynamics/plots/renormalizationshorttimerange.pdf): PDF inclusion: found PDF v
+ersion <1.6>, but at most version <1.5> allowed
 <plots/renormalizationshorttimerange.pdf, id=49, 815.045pt x 614.295pt>
 File: plots/renormalizationshorttimerange.pdf Graphic file (type pdf)
 
 <use plots/renormalizationshorttimerange.pdf>
 Package pdftex.def Info: plots/renormalizationshorttimerange.pdf used on input 
-line 305.
+line 306.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
- [5 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/energyT1rho088N864l
-pnum1000.pdf>]
+ [5 <C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecular_dynamics/plots/energyT1r
+ho088N864lpnum1000.pdf>]
 
-pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
-mics/plots/correlationfunctionT05rho12x.pdf): PDF inclusion: found PDF version 
-<1.6>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecula
+r_dynamics/plots/correlationfunctionT05rho12x.pdf): PDF inclusion: found PDF ve
+rsion <1.6>, but at most version <1.5> allowed
 <plots/correlationfunctionT05rho12x.pdf, id=56, 815.045pt x 614.295pt>
 File: plots/correlationfunctionT05rho12x.pdf Graphic file (type pdf)
 
 <use plots/correlationfunctionT05rho12x.pdf>
 Package pdftex.def Info: plots/correlationfunctionT05rho12x.pdf used on input l
-ine 329.
+ine 330.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 330.
+LaTeX Warning: Command \r invalid in math mode on input line 331.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 330.
+LaTeX Warning: Command \r invalid in math mode on input line 331.
 
 
 
-pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
-mics/plots/corfunct1rho08n864lp500.pdf): PDF inclusion: found PDF version <1.6>
-, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecula
+r_dynamics/plots/corfunct1rho08n864lp500.pdf): PDF inclusion: found PDF version
+ <1.6>, but at most version <1.5> allowed
 <plots/corfunct1rho08n864lp500.pdf, id=57, 815.045pt x 614.295pt>
 File: plots/corfunct1rho08n864lp500.pdf Graphic file (type pdf)
 
 <use plots/corfunct1rho08n864lp500.pdf>
 Package pdftex.def Info: plots/corfunct1rho08n864lp500.pdf used on input line 3
-40.
+41.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 341.
+LaTeX Warning: Command \r invalid in math mode on input line 342.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 341.
+LaTeX Warning: Command \r invalid in math mode on input line 342.
 
 
 
-pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
-mics/plots/correlationfunctionT3Rho03x.pdf): PDF inclusion: found PDF version <
-1.6>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecula
+r_dynamics/plots/correlationfunctionT3Rho03x.pdf): PDF inclusion: found PDF ver
+sion <1.6>, but at most version <1.5> allowed
 <plots/correlationfunctionT3Rho03x.pdf, id=58, 815.045pt x 614.295pt>
 File: plots/correlationfunctionT3Rho03x.pdf Graphic file (type pdf)
 
 <use plots/correlationfunctionT3Rho03x.pdf>
 Package pdftex.def Info: plots/correlationfunctionT3Rho03x.pdf used on input li
-ne 348.
+ne 349.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 349.
+LaTeX Warning: Command \r invalid in math mode on input line 350.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 349.
+LaTeX Warning: Command \r invalid in math mode on input line 350.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 359.
+LaTeX Warning: Command \r invalid in math mode on input line 360.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 359.
+LaTeX Warning: Command \r invalid in math mode on input line 360.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 359.
+LaTeX Warning: Command \r invalid in math mode on input line 360.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 359.
+LaTeX Warning: Command \r invalid in math mode on input line 360.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 359.
+LaTeX Warning: Command \r invalid in math mode on input line 360.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--370
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
 
  []
 
 
 
-pdfTeX warning: pdflatex.EXE (file C:/Users/Amy/Documents/GitHub/molecular_dyna
-mics/plots/presn100lp10000T1rho088prt864.pdf): PDF inclusion: found PDF version
- <1.6>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecula
+r_dynamics/plots/presn100lp10000T1rho088prt864.pdf): PDF inclusion: found PDF v
+ersion <1.6>, but at most version <1.5> allowed
 <plots/presn100lp10000T1rho088prt864.pdf, id=59, 815.045pt x 614.295pt>
 File: plots/presn100lp10000T1rho088prt864.pdf Graphic file (type pdf)
 
 <use plots/presn100lp10000T1rho088prt864.pdf>
 Package pdftex.def Info: plots/presn100lp10000T1rho088prt864.pdf used on input 
-line 374.
+line 375.
 (pdftex.def)             Requested size: 229.8775pt x 173.25745pt.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 375.
+LaTeX Warning: Command \r invalid in math mode on input line 376.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 375.
+LaTeX Warning: Command \r invalid in math mode on input line 376.
 
-[6 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/renormalizationshort
-timerange.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/correlat
-ionfunctionT05rho12x.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plo
-ts/corfunct1rho08n864lp500.pdf> <C:/Users/Amy/Documents/GitHub/molecular_dynami
-cs/plots/correlationfunctionT3Rho03x.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
-
- []
-
-
-LaTeX Warning: Command \r invalid in math mode on input line 382.
-
-
-LaTeX Warning: Command \r invalid in math mode on input line 387.
-
-
-LaTeX Warning: Command \r invalid in math mode on input line 387.
-
-
-LaTeX Warning: Command \r invalid in math mode on input line 387.
-
-
-LaTeX Warning: Command \r invalid in math mode on input line 387.
-
-
-LaTeX Warning: Command \r invalid in math mode on input line 387.
-
-
-LaTeX Warning: Command \r invalid in math mode on input line 387.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
-
- []
-
-[7 <C:/Users/Amy/Documents/GitHub/molecular_dynamics/plots/presn100lp10000T1rho
-088prt864.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 396--397
+[6 <C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecular_dynamics/plots/renormaliz
+ationshorttimerange.pdf> <C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecular_dyn
+amics/plots/correlationfunctionT05rho12x.pdf> <C:/Users/Perry/Documents/Jaar 6 
+AP/ICCP/molecular_dynamics/plots/corfunct1rho08n864lp500.pdf> <C:/Users/Perry/D
+ocuments/Jaar 6 AP/ICCP/molecular_dynamics/plots/correlationfunctionT3Rho03x.pd
+f>]
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 398--399
+LaTeX Warning: Command \r invalid in math mode on input line 383.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 388.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 388.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 388.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 388.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 388.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 388.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
+
+ []
+
+[7 <C:/Users/Perry/Documents/Jaar 6 AP/ICCP/molecular_dynamics/plots/presn100lp
+10000T1rho088prt864.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
-(C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.bbl) [8]
-(C:\Users\Amy\Documents\GitHub\molecular_dynamics\MolDynReport.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
+
+ []
+
+("C:\Users\Perry\Documents\Jaar 6 AP\ICCP\molecular_dynamics\MolDynReport.bbl")
+[8]
+("C:\Users\Perry\Documents\Jaar 6 AP\ICCP\molecular_dynamics\MolDynReport.aux")
+ ) 
 Here is how much of TeX's memory you used:
  5062 strings out of 493921
- 74438 string characters out of 3144882
+ 74564 string characters out of 3144876
  149872 words of memory out of 3000000
  8298 multiletter control sequences out of 15000+200000
  12468 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,19n,38p,1265b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmti10.pfb>
-Output written on MolDynReport.pdf (8 pages, 689807 bytes).
+ 36i,19n,38p,1266b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on MolDynReport.pdf (8 pages, 689923 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
